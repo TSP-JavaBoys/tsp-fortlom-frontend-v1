@@ -1,0 +1,63 @@
+
+<app-navegation></app-navegation>
+<body class="imagebackground">
+<p class="text">Elije el tipo de contenido a eliminar</p>
+<mat-form-field appearance="fill" class="example-full-width">
+  <mat-label>Elija un contenido</mat-label>
+  <mat-select [(ngModel)]="selectedValue">
+    <mat-option value="event">Evento</mat-option>
+    <mat-option value="publication">Publicación</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-raised-button (click)="change()">Ver</button>
+<div class="erd" *ngIf="isevent">
+  <mat-grid-list cols="2" rowHeight="150px">
+    <mat-grid-tile *ngFor="let element of dataSource.data">
+      <div class="cardcontent">
+        <div class="textcard">
+          <th>
+            Nombre:{{element.name}}
+          </th>
+          <th>
+            Autor:{{element.artist.realname}}
+          </th>
+          <th>
+            description:{{element.description}}
+          </th>
+          <th>
+            <button mat-raised-button (click)="select(element.id)">
+              <mat-icon>remove_red_eye</mat-icon>
+            </button>
+   
+          </th>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>
+
+<div class="erd" *ngIf="ispublication">
+  <mat-grid-list cols="2" rowHeight="150px">
+    <mat-grid-tile *ngFor="let element of dataSource.data">
+      <div class="cardcontent">
+        <div class="textcard">
+    <th>
+      Autor:{{element.artist.realname}}
+    </th>
+    <th>
+      description:{{element.description}}
+    </th>
+    <th>
+      <button mat-raised-button (click)="select(element.id)">
+        <mat-icon>remove_red_eye</mat-icon>
+      </button>
+     
+    </th>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  </div>
+</body>

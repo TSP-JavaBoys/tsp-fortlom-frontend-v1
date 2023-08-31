@@ -1,0 +1,18 @@
+<app-navegation></app-navegation>
+<body class="imagebackground">
+  <div class="cardcontent">
+  <div *ngIf="whois == 'Publication'">
+    <p class="text">Description: {{objectcontent.description}}</p>
+  </div>
+  
+  <div *ngIf="whois == 'Event'">
+    <p class="text">Nombre: {{objectcontent.name}}</p>
+    <p class="text">Description: {{objectcontent.description}}</p>    
+  </div>  
+  
+  <button mat-raised-button color="primary" (click)="DeleteContent(whois)">Eliminar</button>
+ 
+  </div>
+</body>
+
+

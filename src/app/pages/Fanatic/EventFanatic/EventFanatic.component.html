@@ -1,0 +1,123 @@
+<app-fanaticnavigation></app-fanaticnavigation>
+<body class="imageBackground">
+<div class="Title">
+  Look for the most emotional events of the artists
+</div>
+<section>
+template: `<swiper
+  [slidesPerView]="1"
+  [spaceBetween]="30"
+  [loop]="true"
+  [pagination]="{
+    clickable: true
+  }"
+  [navigation]="true"
+  class="mySwiper"
+>
+  <ng-template swiperSlide>
+  <mat-card class="card-carousel">
+        <div class="left-column background3-left-column">
+          <div fxFlex="10">
+            <img src="https://lastfm.freetls.fastly.net/i/u/770x0/0dfc90c9e45343d2a19a5db20a3b5d1d.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="text-carousel1">
+              <h1>Marron 5</h1>
+              <p>Evento en Lima - Ate</p>
+          </div>
+        </div>
+      </mat-card>
+  
+</ng-template
+  ><ng-template swiperSlide>
+  <mat-card class="card-carousel">
+        <div class="left-column background3-left-column">
+          <div fxFlex="10">
+            <img src="https://p4.wallpaperbetter.com/wallpaper/105/650/395/music-wallpaper-preview.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="text-carousel1">
+              <h1>Evento 2</h1>
+              <p>Evento en Lima - Ate</p>
+          </div>
+        </div>
+      </mat-card>  
+  </ng-template
+  ><ng-template swiperSlide>
+  <mat-card class="card-carousel">
+        <div class="left-column background3-left-column">
+          <div fxFlex="10">
+            <img src="https://m.media-amazon.com/images/I/41soqdQyqOL.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="text-carousel1">
+              <h1>Evento 3</h1>
+              <p>Evento en Lima - Ate</p>
+          </div>
+        </div>
+      </mat-card></ng-template>
+</swiper>
+</section>
+
+<mat-grid-list cols="2" rowHeight="500px">
+  <mat-grid-tile *ngFor ="let arr of arrayevents">
+      <mat-card class="example-card-event">
+        <div class="left-column background1-left-column" *ngFor ="let arr2 of arrayusers">
+          <div *ngIf = "arr.artist.id == arr2.id" class="text">
+                    <h1>{{arr.name}}</h1>
+          </div>
+          <div fxFlex="10" *ngIf = "arr.artist.id == arr2.id">
+            <app-imageforlist [artist]="arr2.id" class="imageEvent"></app-imageforlist>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div *ngFor ="let arr2 of arrayusers">
+            <div *ngIf = "arr.artist.id == arr2.id" class="text2">
+                <h1>{{arr2.realname}} {{arr2.lastname}}</h1>
+                <p>{{arr.description}}</p>
+            </div>
+          </div>
+          <div>
+          <app-Opinion [content]="arr" [user]="idevent" class="content"></app-Opinion>
+                <div class = "minipadding"></div>
+                <p>{{arr.eventlikes}}</p>
+          </div>
+          <div *ngIf="checkislickisinevent(arr.ticketLink)" class="link">
+            <a href="{{arr.ticketLink}}" id="tikcetlink"><button mat-button><mat-icon>link</mat-icon></button></a>
+          </div>
+        </div>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+</body>

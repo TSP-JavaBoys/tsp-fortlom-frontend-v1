@@ -1,0 +1,103 @@
+
+<app-navegation></app-navegation>
+<body class="imagebackground">
+<p class="text">Elije el tipo de contenido a crear</p>
+<mat-form-field appearance="fill" class="example-full-width">
+  <mat-label>Elija un contenido</mat-label>
+  <mat-select [(ngModel)]="selectedValue">
+    <mat-option value="event">Evento</mat-option>
+    <mat-option value="publication">Publicación</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-raised-button (click)="change()" class="see">Ver</button>
+<div *ngIf="ispublication">
+<form class="example-full-width" #PublicationForm='ngForm'>
+
+<section class="container">
+<div class="cardpublication">
+  <h1>Description:</h1>
+  <tr>
+    <th>
+      <mat-form-field  appearance="fill" class="box">
+  
+        <textarea matInput [(ngModel)]="Publication.description" name="PublicationDescription"></textarea>
+      </mat-form-field>
+    </th>
+    <th>
+      <img src={{img}}>
+      <div>
+      <input style="display:none" type="file" id="my-file" (change)="onFileChanged($event)">
+      <button mat-raised-button color="primary"  onclick="document.getElementById('my-file').click()">Seleccionar imagen</button>
+    </div>
+    </th>
+  </tr>
+  </div>
+</section>
+
+<div class="publicationpost">
+      <button mat-raised-button color="primary" (click)="createevent()">Crear</button>
+  </div>
+
+</form>
+</div>
+
+<div *ngIf="isevent">
+  <form class="example-full-width" #EventForm='ngForm'>
+
+    <section  class="container">
+      <div class="cardevent">
+      <tr>
+        <th>
+          <mat-form-field  appearance="fill" class="box">
+      
+            <textarea matInput [(ngModel)]="Event.description" placeholder="EventDescription" name="EventDescription"></textarea>
+          </mat-form-field>
+        </th>
+        <th>
+          <mat-form-field  appearance="fill" class="box">
+      
+            <textarea matInput [(ngModel)]="Event.name" placeholder="EventName" name="EventName"></textarea>
+          </mat-form-field>
+        </th>
+        <th>
+        
+  
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <mat-form-field appearance="fill" class="example-form-field">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="datepicker"   (dateInput)="setfecha($event )" id="setdate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <!-- #docregion datepicker-actions -->
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          <!-- #enddocregion datepicker-actions -->
+          </mat-form-field>
+        </th>
+        <th>
+          
+          <mat-form-field>
+            <input matInput placeholder="EventTicketLink" name="EventTicketLink" 
+              [(ngModel)]="Event.ticketLink" id="seteventticketlink">
+              <mat-error>Es requerido</mat-error>
+          </mat-form-field>
+        </th>
+      </tr>
+      </div>
+      
+</section>
+  <div class="eventpost">
+      <button mat-raised-button color="primary" (click)="createevent()">Crear</button>
+  </div>
+     
+    </form>
+
+</div>
+</body>

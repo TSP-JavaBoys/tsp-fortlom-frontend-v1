@@ -1,0 +1,212 @@
+
+.buttonspacertoright{
+    width: 100px; 
+    margin-left: 100%;
+    transform: translateX(-100%);
+}
+
+.example-header-image {
+    
+    width: 300px;
+    height: 300px;
+    
+  }
+
+  .example-card {
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    
+    
+    background: rgb(204,160,39);
+    background: linear-gradient(101deg, rgba(204,160,39,1) 0%, rgba(105,105,105,1) 35%);
+    background: linear-gradient(101deg, rgba(105,105,105,1) 0%, rgba(204,160,39,1) 35%);
+  }
+  
+  .center{
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+  }
+
+  .inputGenre{
+    width: 50%;
+  }
+  .buttonspacertoright{
+    width: 100px;
+    margin-left: 100%;
+    transform: translateX(-100%);
+  }
+  
+  .buttoncenter{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 8px;
+
+  }
+  
+  
+  .button{
+    background-color: #cca027;
+    color: white;
+    
+  }
+
+  
+  
+  .image{
+    border-radius: 25pt;
+    width: 100%;
+    margin: auto;
+    
+  }
+  
+  .table{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .minipadding{
+    padding-bottom: 10px;
+  }
+  
+  .padding{
+    padding-bottom: 100px;
+  }
+  
+  .centeravatar{
+    margin:auto;
+    display: flex;
+    
+  }
+  
+  .extraBtn{
+    
+    background-color: #cca027;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  
+  .textcenter{
+    text-align: center;
+  }
+  
+  .withoutborder {
+    border: 0;
+    
+
+  }
+  .withoutborder2 {
+    border: 0;
+    padding-left: 100px;
+  
+
+  }
+  .genderTable {
+    border: 0;
+    position: absolute;
+    left: 25px;
+    top: 420px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 50px;
+  }
+  .genderTable2 {
+   
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .containerGender{
+    display: flex;
+    justify-content: space-between;
+  }
+  .textstyle{
+    color:#FFFFFF;
+  }
+  .loadFileBtn{
+    position: absolute;
+    top: 310px;
+    left: 250px;
+
+  }
+  .iconFileBtn{
+    font-size: 50px;
+    color: white;
+    
+
+  }
+  .optionsProfile{
+    position: absolute;
+    left: 350px;
+    top: 75px;
+    
+  }
+
+  .fontawesomesvg {width: 1em;
+    height: 1em;
+    vertical-align: -.125em;
+    color: white;
+  }
+
+  .test{
+    text-align: center;
+    align-items: center;
+  }
+
+  .background{
+    
+    background: rgb(204,160,39);
+    background: linear-gradient(297deg, rgba(204,160,39,1) 0%, rgba(105,105,105,1) 90%);
+
+    
+    background-size: cover;
+    height: 100%;
+  }
+
+  .customTables{
+    border: 0;
+
+  }
+  .header{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  :host ::ng-deep .mat-form-field-appearance-outline{
+    color: white;
+    
+  }
+
+  :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color:white;
+}
+
+
+  
+  :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: white!important;
+  }
+  
+  
+  :host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      color: white!important;
+  }
+  
+   
+  :host ::ng-deep .mat-input-element {
+      caret-color: white!important;
+  }
+  
+  :host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+      color: white!important;
+  }
+  
+  :host ::ng-deep .mat-input-element::placeholder{
+  color: white;
+}
+

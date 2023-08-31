@@ -1,0 +1,83 @@
+.forumtitle{
+
+    color:black;
+    font-size:30px
+  }
+  .card
+  {
+    background-color:#C8C8C8;
+    margin-bottom: 30px;
+  }
+  .head{
+  
+  justify-content: space-between;
+  
+  
+  }
+  .but{
+  
+  
+  background-color:#9CC7EF;
+  
+  
+  
+  
+  }
+  .color
+  {
+    color: black;
+  }
+  .seconcard{
+  
+    background-color:#C8C8C8;
+    margin-bottom: 20px;
+    margin-left: 30%;
+  
+  
+  }
+  .area
+  {
+  
+  width: 100%;
+  
+  }
+  .button-row button{
+    width: 40%;
+    margin:25px;
+  
+  }
+  .rules{
+     margin-bottom: 25px;
+     justify-content: center;
+  }
+  .footer{
+    background-color:#3a0a0a;
+    margin-bottom: 30px;
+  }
+  .cardrules{
+    background-color:black;
+    color: white;
+    padding-left: 20px;
+  }
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+  .basic-container {
+    color: white;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-position: 50% 50%;
+    overflow: auto;
+    background-image: url(./FondoForum.png);
+    
+  }
+  .Cardforum {
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+  }

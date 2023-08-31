@@ -1,0 +1,12 @@
+
+<mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1"
+  (click)="new_rate(value)"
+  [(ngModel)]="value" 
+  step="1"
+  min="0"
+  max="5"
+  aria-label="units"></mat-slider>
+  

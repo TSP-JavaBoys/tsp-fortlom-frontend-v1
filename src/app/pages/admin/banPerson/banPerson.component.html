@@ -1,0 +1,64 @@
+<app-navegation></app-navegation>
+<body class="imagebackground">
+  <p class="text">Elije el tipo de usuario</p>
+  <mat-form-field appearance="fill" class="example-full-width">
+  <mat-label>Tipo de usuario</mat-label>
+  <mat-select [(ngModel)]="selectedValue">
+    <mat-option value="artist">Artista</mat-option>
+    <mat-option value="fanatic">Fanatico</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-raised-button (click)="change()" class="see">Ver</button>
+<div class="erd" *ngIf="isartist">
+  <mat-grid-list cols="2" rowHeight="150px">
+    <mat-grid-tile *ngFor="let element of dataSource.data">
+      <div class="cardcontent">
+        <div class="textcard">
+          <th>
+            Nombre:{{element.realname}}
+          </th>
+          
+          <th>
+          <app-setreport [iduser]="element.id"></app-setreport>
+          </th>
+          
+  
+          <th>
+          <button mat-raised-button (click)="banartist(element.id)">
+            <mat-icon>pan_tool</mat-icon>
+          </button>
+   
+          </th>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="erd" *ngIf="isfanatic">
+  <mat-grid-list cols="2" rowHeight="150px">
+    <mat-grid-tile *ngFor="let element of dataSource.data">
+      <div class="cardcontent">
+        <div class="textcard">
+          <th>
+            <div mat-card-avatar class="example-header-image"></div>
+          </th>
+          <th>
+            Nombre:{{element.realname}}
+          </th>
+          <th>
+            <app-setreport [iduser]="element.id"></app-setreport>
+          </th>
+          <th>
+            <button mat-raised-button (click)="banfanbatic(element.id)">
+              <mat-icon>pan_tool</mat-icon>
+            </button>
+          </th>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+  </div>
+</body>
+
