@@ -16,7 +16,7 @@ export class ArtistGuard implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    const expectedRol = route.data.expectedRol;
+    const expectedRol = route.data['expectedRol'];
     if(this.tokenService.isfanatic()){
       this.realRol='Role_Fanatic'
     }else{
@@ -30,5 +30,5 @@ export class ArtistGuard implements CanActivate {
     console.log("es artista")
     return true;
   }
-  
+
 }

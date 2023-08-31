@@ -23,15 +23,15 @@ export class RateComponent implements OnInit {
     let pad=parseInt(this.route.snapshot.paramMap.get('id')!);
     let id2= pad;
     this.idactualuser=id2;
-   
-   
+
+
   }
-  formatLabel(value: number) {
+  formatLabel(value: number):string {
     if (value >= 1000) {
       return Math.round(value / 1000) + 'k';
     }
     this.val = value;
-    return value;
+    return value.toString();
   }
   new_rate( aId: number){
     console.log('rate:' + aId)
@@ -43,7 +43,7 @@ export class RateComponent implements OnInit {
   NewRate(){
     console.log("Entrando a funcion NewRate")
 
-   
+
     this.rateservice.existbyartistoidandfanaticid(this.idcomment,this.idactualuser).subscribe((response:any)=>{
          console.log("entro")
       if(response==false){
@@ -51,7 +51,7 @@ export class RateComponent implements OnInit {
 
           alert("Se ha calificado al artista")
           console.log("Se ha calificado al artista")
-    
+
         });
       }
       else{
@@ -62,17 +62,12 @@ export class RateComponent implements OnInit {
                              alert("Se ha calificado al artista")
                              console.log("Se ha calificado al artista")
                              return(response)
-                             
+
                        })
              })
       }
 
     })
-
-
-
-   
-
 
   }
 

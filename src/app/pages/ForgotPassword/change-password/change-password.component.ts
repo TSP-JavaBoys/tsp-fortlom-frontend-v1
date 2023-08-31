@@ -17,7 +17,7 @@ export class ChangePasswordComponent implements OnInit {
     private emailPasswordService: EmailPasswordService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) { 
+  ) {
     this.dto={}as ChangePasswordDTO
   }
 
@@ -28,7 +28,7 @@ export class ChangePasswordComponent implements OnInit {
       alert("Las contraseñas no coinciden")
     }
 
-    this.tokenPassword = this.activatedRoute.snapshot.params.tokenPassword;
+    this.tokenPassword = this.activatedRoute.snapshot.params['tokenPassword'];
     this.dto.password=this.password
     this.dto.confirmPassword=this.confirmPassword
     this.dto.tokenPassword=this.tokenPassword

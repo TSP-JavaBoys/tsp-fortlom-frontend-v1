@@ -4,7 +4,6 @@ import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
 import { LoginUser } from 'src/app/models/LoginUser';
 import { JwtDTO } from 'src/app/models/JwtDTO';
-import { environment } from './../../../environments/environment';
 import { NewArtist } from 'src/app/models/NewArtist';
 import { NewFanatic } from 'src/app/models/NewFanatic';
 @Injectable({
@@ -30,7 +29,7 @@ export class AuthService {
       `Backend returned code ${error.status}, body was: ${error.error}`
     );
   }
-  
+
   return throwError('Something happened with request, please try again later');
   }
 
@@ -41,8 +40,8 @@ export class AuthService {
     .pipe(
       retry(2),
       catchError(this.handleError));
-  
-  
+
+
   }
   RegisterArtist(item:NewArtist): Observable<any>{
 

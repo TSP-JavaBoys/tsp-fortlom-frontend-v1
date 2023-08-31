@@ -4,68 +4,6 @@
 <div class="Title">
   Look for the most emotional events of the artists
 </div>
-<section>
-template: `<swiper
-  [slidesPerView]="1"
-  [spaceBetween]="30"
-  [loop]="true"
-  [pagination]="{
-    clickable: true
-  }"
-  [navigation]="true"
-  class="mySwiper"
->
-  <ng-template swiperSlide>
-  <mat-card class="card-carousel">
-        <div class="left-column background3-left-column">
-          <div fxFlex="10">
-            <img src="https://lastfm.freetls.fastly.net/i/u/770x0/0dfc90c9e45343d2a19a5db20a3b5d1d.jpg" alt="">
-          </div>
-        </div>
-
-        <div class="right-column">
-          <div class="text-carousel1">
-              <h1>Marron 5</h1>
-              <p>Evento en Lima - Ate</p>
-          </div>
-        </div>
-      </mat-card>
-  
-</ng-template
-  ><ng-template swiperSlide>
-  <mat-card class="card-carousel">
-        <div class="left-column background3-left-column">
-          <div fxFlex="10">
-            <img src="https://p4.wallpaperbetter.com/wallpaper/105/650/395/music-wallpaper-preview.jpg" alt="">
-          </div>
-        </div>
-
-        <div class="right-column">
-          <div class="text-carousel1">
-              <h1>Evento 2</h1>
-              <p>Evento en Lima - Ate</p>
-          </div>
-        </div>
-      </mat-card>  
-  </ng-template
-  ><ng-template swiperSlide>
-  <mat-card class="card-carousel">
-        <div class="left-column background3-left-column">
-          <div fxFlex="10">
-            <img src="https://m.media-amazon.com/images/I/41soqdQyqOL.jpg" alt="">
-          </div>
-        </div>
-
-        <div class="right-column">
-          <div class="text-carousel1">
-              <h1>Evento 3</h1>
-              <p>Evento en Lima - Ate</p>
-          </div>
-        </div>
-      </mat-card></ng-template>
-</swiper>
-</section>
-
 <mat-card class="example-card-event2">
   <div class="img-card"></div>
     <div class="text-post">
@@ -106,29 +44,5 @@ template: `<swiper
       </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
-
-
-<meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
 
 </body>

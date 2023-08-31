@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HTTP_INTERCEPTORS, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, concatMap } from 'rxjs/operators';
-import { TokenService } from '../services/token/token.service';
-import { AuthService } from '../services/auth/auth.service';
+import { TokenService} from "../services/token/token.service";
+import {AuthService} from "../services/auth/auth.service";
+
 
 const AUTHORIZATION = 'Authorization';
 
@@ -36,7 +37,7 @@ export class InterceptorService implements HttpInterceptor{
 
 
   }
-  
+
 
 
 

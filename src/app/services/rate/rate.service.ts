@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { environment } from './../../../environments/environment';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
@@ -11,15 +10,15 @@ export class RateService {
 
   //basePath = 'https://fortlom-support.herokuapp.com/api/v1/supportservice';
   basePath = 'http://localhost:8080/api/v1/supportservice';
-  
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-  
+
   constructor(private http: HttpClient) { }
-  
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log(`An error occurred: ${error.error.message} `);
@@ -29,10 +28,10 @@ export class RateService {
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
     }
-  
+
     return throwError('Something happened with request, please try again later');
   }
-  
+
   // Create Rate
   create(artistid:number,fanaticid:number,item: any): Observable<Rate> {
     return this.http.post<Rate>(`${this.basePath}/artists/${artistid}/fanatics/${fanaticid}/rates`, JSON.stringify(item), this.httpOptions)
@@ -40,7 +39,7 @@ export class RateService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Get Rate by id
   getById(id: any): Observable<Rate> {
     return this.http.get<Rate>(`${this.basePath}/rates/${id}`, this.httpOptions)
@@ -72,7 +71,7 @@ export class RateService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Get All Rates
   getAll(): Observable<Rate> {
     return this.http.get<Rate>(`${this.basePath}/rates`, this.httpOptions)
@@ -80,7 +79,7 @@ export class RateService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Update Rate
   update(rateId: number,review:Rate): Observable<Rate> {
     console.log(review)
@@ -89,7 +88,7 @@ export class RateService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Delete Rate
   delete(id: any) {
     return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)

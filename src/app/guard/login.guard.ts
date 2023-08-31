@@ -10,7 +10,7 @@ import { ArtistService } from '../services/artist/artist.service';
 })
 export class LoginGuard implements CanActivate {
   realRol!: string;
-  
+
   constructor(
     private tokenService: TokenService,
     private router: Router,
@@ -21,7 +21,7 @@ export class LoginGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.tokenService.isLogged()) {
 
-      const expectedRol = next.data.expectedRol;
+      const expectedRol = next.data['expectedRol'];
        console.log(expectedRol)
       if(this.tokenService.isfanatic()){
         this.realRol='Role_Fanatic'
@@ -29,7 +29,7 @@ export class LoginGuard implements CanActivate {
         this.realRol = this.tokenService.isartist() ? 'Role_Artist' : 'Role_Upgrade_Artist';
         console.log(this.realRol)
       }
-      
+
 
            if(this.realRol=='Role_Fanatic'){
             this.servicefana.getUserByfanaticname(this.tokenService.getUserName()).subscribe((response:any)=>{
@@ -39,7 +39,7 @@ export class LoginGuard implements CanActivate {
             })
            }
            if(this.realRol=='Role_Artist'||this.realRol=='Role_Upgrade_Artist'){
-            
+
             this.serivcearti.getUserByartistname(this.tokenService.getUserName()).subscribe((response:any)=>{
 
               console.log("ya es artista")
@@ -50,15 +50,15 @@ export class LoginGuard implements CanActivate {
 
 
 
-           
-      
-     
+
+
+
       }
     }
     console.log("ingresados")
     return true;
   }
-  
+
 
 
 

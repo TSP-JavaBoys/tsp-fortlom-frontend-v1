@@ -1,4 +1,3 @@
-import { environment } from './../../../environments/environment';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
@@ -13,15 +12,15 @@ export class FollowService {
 
   //basePath =  'https://fortlom-support.herokuapp.com/api/v1/supportservice';
   basePath =  'http://localhost:8080/api/v1/supportservice';
-  
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-  
+
   constructor(private http: HttpClient) { }
-  
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log(`An error occurred: ${error.error.message} `);
@@ -31,10 +30,10 @@ export class FollowService {
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
     }
-  
+
     return throwError('Something happened with request, please try again later');
   }
-  
+
   // Create Follow
   create(fanaticid:number,artistid:number,boolfollow:boolean): Observable<Follow> {
     return this.http.post<Follow>(`${this.basePath}/artists/${artistid}/fanatics/${fanaticid}/boolfollow/${boolfollow}/follows`, this.httpOptions)
@@ -42,7 +41,7 @@ export class FollowService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Get Follow by id
   getById(id: any): Observable<Follow> {
     return this.http.get<Follow>(`${this.basePath}/follows/${id}`, this.httpOptions)
@@ -81,7 +80,7 @@ export class FollowService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Update Follow
   update(followid: number,boolfollow:boolean ): Observable<Follow> {
     return this.http.put<Follow>(`${this.basePath}/update/${followid}/follow/${boolfollow}`,  this.httpOptions)
@@ -89,7 +88,7 @@ export class FollowService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Delete Follow
   delete(id: any) {
     return this.http.delete(`${this.basePath}/follows/${id}`, this.httpOptions)

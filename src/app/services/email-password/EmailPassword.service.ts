@@ -1,5 +1,4 @@
 import { ChangePasswordDTO } from './../../models/ChangePasswordDTO';
-import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';

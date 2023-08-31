@@ -66,13 +66,7 @@ export class PostPageComponent implements OnInit {
 
       }
 
-
-
-
-
-
      })
-
 
 
     }

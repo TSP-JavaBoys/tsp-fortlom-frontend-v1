@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree,Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AdminService } from './../../services/admin/admin.service';
-import { TokenService } from './../../services/token/token.service';
+import { AdminService } from '../../services/admin/admin.service';
+import { TokenService } from '../../services/token/token.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +16,7 @@ export class AdminGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-      const expectedRol = route.data.expectedRol;
+      const expectedRol = route.data['expectedRol'];
     if(this.tokenService.isadmin()){
       this.realRol='Role_Admin'
     }else{
@@ -34,5 +34,5 @@ export class AdminGuard implements CanActivate {
 
 
   }
-  
+
 }

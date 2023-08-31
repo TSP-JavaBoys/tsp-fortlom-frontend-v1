@@ -13,11 +13,6 @@ import { Event } from 'src/app/models/event';
 import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 import { DatePipe } from '@angular/common';
 
-// import Swiper core and required modules
-import SwiperCore, { Pagination, Navigation } from "swiper";
-
-// install Swiper modules
-SwiperCore.use([Pagination, Navigation]);
 
 @Component({
   selector: 'app-ArtistEvent',
@@ -83,7 +78,7 @@ export class ArtistEventComponent implements OnInit {
     console.log(this.idevent);
     this.getAllEvents();
     this.getListArtist();
-   
+
   }
 
   getAllEvents() {
@@ -92,7 +87,7 @@ export class ArtistEventComponent implements OnInit {
       this.dataSource.paginator=this.paginator;
       this.arrayevents = response.content;
       console.log(this.arrayevents)
-      
+
     });
   }
 
@@ -107,14 +102,14 @@ export class ArtistEventComponent implements OnInit {
   }
 
 
- 
+
 
   insertevent() {
     this.cd.navigate(['/HomeArtist',this.idevent,"Event", "CreateEvent"])
     //HomeArtist/:id/Event/CreateEvent
   }
 
-  
+
 
   cancelEdit() {
     this.isEditMode = false;
@@ -128,7 +123,7 @@ export class ArtistEventComponent implements OnInit {
      })
   }
 
-  
+
 
   updateEvent() {
     this.eventService.update(this.eventdata.id, this.eventdata).subscribe((response: any) => {
@@ -254,24 +249,24 @@ getByIdUser(id:number) {
 
 
     this.proDate=fecha
-    
+
     this.proDatevalue = this.datePipe.transform(fecha, 'yyyy-MM-dd')!;
-    
-    
+
+
     return this.proDatevalue
-    
+
     }
 
 
     checkislickisinevent(link:string){
 
-       
+
       if(link=="" || link==null){
-        
+
         return false
       }
       return true
-      
+
 
 }
 
