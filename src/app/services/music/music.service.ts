@@ -9,14 +9,14 @@ import { Music } from 'src/app/models/Music';
 })
 export class MusicService {
 
-  basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/songs';
-
+  //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/songs';
+  basePath = 'https://fortlom.azurewebsites.net/api/v1/userservice/songs';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-    
+
   constructor(private http: HttpClient) { }
 
   handleError(error: HttpErrorResponse) {

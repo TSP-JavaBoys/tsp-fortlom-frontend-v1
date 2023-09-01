@@ -13,9 +13,11 @@ export class AdminService {
       'Content-Type': 'application/json',
     })
   }
-  basePath =  'http://localhost:8080/auth';
-  basePath2 = 'http://localhost:8080/api/v1/userservice/users/users/Username';
-               
+  //basePath =  'http://localhost:8080/auth';
+  //basePath2 = 'http://localhost:8080/api/v1/userservice/users/users/Username';
+  basePath = 'https://fortlom.azurewebsites.net/api/v1/userservice/users/users/Username';
+  basePath2 = 'https://fortlom.azurewebsites.net/auth';
+
   constructor(private http:HttpClient) { }
   handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {
@@ -26,7 +28,7 @@ export class AdminService {
       `Backend returned code ${error.status}, body was: ${error.error}`
     );
   }
-  
+
   return throwError('Something happened with request, please try again later');
   }
 
@@ -37,8 +39,8 @@ export class AdminService {
     .pipe(
       retry(2),
       catchError(this.handleError));
-  
-  
+
+
   }
   GetAdmin(name:string){
     return this.http.get<any>(`${this.basePath2}/${name}`, this.httpOptions)
@@ -46,7 +48,7 @@ export class AdminService {
       retry(2),
       catchError(this.handleError));
   }
- 
+
 
 
 }

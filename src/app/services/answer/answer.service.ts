@@ -10,16 +10,16 @@ export class AnswerService {
 
 
   //basePath ='https://fortlom-answer.herokuapp.com/api/v1/answerservice';
-  
-  basePath ='http://localhost:8080/api/v1/answerservice';
+  //basePath ='http://localhost:8080/api/v1/answerservice';
+  basePath = 'https://fortlom.azurewebsites.net/api/v1/answerservice';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-  
+
   constructor(private http: HttpClient) { }
-  
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log(`An error occurred: ${error.error.message} `);
@@ -29,7 +29,7 @@ export class AnswerService {
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
     }
-  
+
     return throwError('Something happened with request, please try again later');
   }
   getAll(): Observable<Opinion> {
