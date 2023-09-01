@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "./material/material.module";
-import { HttpClientModule} from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HomeArtistComponent} from "./pages/Artists/home-artist/home-artist.component";
 import {ArtistNavegationComponent} from "./pages/Artists/ArtistNavegation/ArtistNavegation.component";
@@ -66,6 +66,7 @@ import {ConfigurationArtistComponent} from "./pages/configuration/configuration-
 import {ArtistEventComponent} from "./pages/Artists/ArtistEvent/ArtistEvent.component";
 import {LoginComponent} from "./pages/Login/Login.component";
 import {MatCardModule} from "@angular/material/card";
+import { CorsInterceptor } from './interceptors/CorsInterceptor .service';
 
 @NgModule({
   declarations: [
@@ -133,7 +134,13 @@ import {MatCardModule} from "@angular/material/card";
     ReactiveFormsModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CorsInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
