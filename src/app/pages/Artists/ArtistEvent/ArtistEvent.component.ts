@@ -75,7 +75,6 @@ export class ArtistEventComponent implements OnInit {
     let pod=parseInt(this.route.snapshot.paramMap.get('id')!);
     let id = pod;
     this.idevent=id;
-    console.log(this.idevent);
     this.getAllEvents();
     this.getListArtist();
 
@@ -86,7 +85,7 @@ export class ArtistEventComponent implements OnInit {
       this.dataSource.data = response.content;
       this.dataSource.paginator=this.paginator;
       this.arrayevents = response.content;
-      console.log(this.arrayevents)
+    
 
     });
   }
@@ -97,7 +96,6 @@ export class ArtistEventComponent implements OnInit {
 
 
   setfecha( event: MatDatepickerInputEvent<Date>){
-    console.log(event.value)
     this.eventdata.registerdate=event.value!
   }
 
@@ -118,7 +116,6 @@ export class ArtistEventComponent implements OnInit {
 
   getlikes(id:number){
      this.AnswerService.getAllOpinionsByagreeandContentId(id,true).subscribe((response: any)=>{
-          console.log(response.content.length)
            return response.content.length
      })
   }
@@ -142,7 +139,6 @@ export class ArtistEventComponent implements OnInit {
       this.dataSource.data = response;
       this.dataSource.paginator=this.paginator;
 
-      console.log(response)
     });
   }
 

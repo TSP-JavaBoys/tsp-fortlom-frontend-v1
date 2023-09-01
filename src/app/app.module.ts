@@ -127,11 +127,12 @@ import {MatCardModule} from "@angular/material/card";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule,
     FormsModule,
+    MaterialModule,
     ReactiveFormsModule,
-    MatCardModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
