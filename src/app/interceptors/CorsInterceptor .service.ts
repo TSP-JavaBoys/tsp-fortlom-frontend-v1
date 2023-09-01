@@ -7,7 +7,7 @@ export class CorsInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     request = request.clone({
       setHeaders: {
-        'Access-Control-Allow-Origin': 'https://tsp-fortlom-frontend-v1-pxpx.vercel.app',
+        'Access-Control-Allow-Origin': 'https://tsp-fortlom-frontend-v1-pxpx-97ntqsvku-javaboys.vercel.app',                           
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
         'Access-Control-Allow-Headers': 'Content-Type',
       },

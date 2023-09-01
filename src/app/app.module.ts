@@ -135,11 +135,7 @@ import { CorsInterceptor } from './interceptors/CorsInterceptor .service';
     MatCardModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: CorsInterceptor,
-      multi: true,
-    }
+    
   ],
   bootstrap: [AppComponent]
 })
