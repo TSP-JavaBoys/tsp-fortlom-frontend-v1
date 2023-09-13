@@ -33,6 +33,7 @@ import { AlbumComponent } from './pages/Artists/Album/Album.component';
 import { CreateAlbumComponent } from './pages/Artists/Album/CreateAlbum/CreateAlbum.component';
 import { CreateMusicComponent } from './pages/Artists/Album/CreateMusic/CreateMusic.component';
 import { OneAlbumComponent } from './pages/Artists/Album/OneAlbum/OneAlbum.component';
+import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/FanaticForumPage.component';
 
 const routes: Routes = [
 
@@ -54,7 +55,7 @@ const routes: Routes = [
   {path:'HomeFanatic/:id/Event',component:EventFanaticComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/FanaticForum',component:FanaticForumComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/FanaticForum/CreateForum',component:FanaticForumCreateComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
-  {path:'HomeFanatic/:id/FanaticForum/ForumPage/:forumid',component:ForumPageComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
+  {path:'HomeFanatic/:id/FanaticForum/ForumPage',component:FanaticForumPageComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/artists',component:ArtistListComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path: 'HomeFanatic/:id/posts',component:PostPageComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/ConfigureFanatic',component:ConfigurationFanaticComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},

@@ -67,6 +67,7 @@ import {ArtistEventComponent} from "./pages/Artists/ArtistEvent/ArtistEvent.comp
 import {LoginComponent} from "./pages/Login/Login.component";
 import {MatCardModule} from "@angular/material/card";
 import { CorsInterceptor } from './interceptors/CorsInterceptor .service';
+import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/FanaticForumPage.component';
 
 @NgModule({
   declarations: [
@@ -122,7 +123,8 @@ import { CorsInterceptor } from './interceptors/CorsInterceptor .service';
     CreateMusicComponent,
     OneAlbumComponent,
     UpgradeArtistDialogComponent,
-    ImagealbumComponent
+    ImagealbumComponent,
+    FanaticForumPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 .area
 {
-
-width: 100%;
+  margin-left: 50px;
+width: 90%;
 height: 100%;
 margin-top: 30px;
 }
@@ -12,11 +12,11 @@ margin-top: 30px;
   color:black;
   background-color:#9CC7EF
 }
-.con{
+.forumname{
 margin-left: 50px;
 
 margin-bottom: 10px;
-width: 50%;
+width: 90%;
   border-color: black;
 }
 .basic-container {
@@ -33,4 +33,7 @@ width: 50%;
 
 .Cardforum {
   padding: 100px;
+}
+mat-card{
+  background-color: #fafbfd;
 }

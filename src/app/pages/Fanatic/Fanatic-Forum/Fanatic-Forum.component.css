@@ -17,10 +17,29 @@
     
       color:black;
     }
+    .center{
+      display: flex;
+      justify-content: center;
+    }
     .card
     {
-      background-color:white;
+      background-color:#332f2c;
       margin-bottom: 40px;
+     width: 80%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+     
+    }
+    .imgforum{
+      width: 10%;
+    }
+    .info{
+      width: 80%;
+    }
+    .flag{
+      height: auto;
+      color:whitesmoke
     }
     .add
     {
@@ -51,16 +70,12 @@
     }
     .responsive {
       width: 100%;
-      height: auto;
+      
     }
     .basic-container {
       color: white;
       background-size: cover;
-      height: 100%;
-      width: 100%;
-      position: fixed;
-      background-position: 50% 50%;
-      overflow: auto;
+     
       background-image: url(./FondoForum.png);
       
     }
@@ -72,3 +87,36 @@
       background-image: url('https://media.revistavanityfair.es/photos/60e82b88bf8d45dd8c6f5f39/master/w_3638,h_3006,c_limit/228632.jpg');
       background-size: cover;
     }
+    .centerbuton{
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 100px;
+    }
+    .buttonmain{
+      width: 80%;
+
+    }
+    .mat-mdc-raised-button:not(:disabled) {
+      background-color: #1c0d02;
+  }
+  .mat-mdc-button:not(:disabled) {
+    color: whitesmoke;
+}
+  .forums{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+   
+  }
+  .forumname{
+   color: white;
+  }
+  .forumtitle{
+    font-size:10vh;
+    margin-bottom: 100px;
+  }
+  .person{
+    
+
+  }
