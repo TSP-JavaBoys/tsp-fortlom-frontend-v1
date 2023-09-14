@@ -1,0 +1,67 @@
+<style>
+  .post-mat-card {
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  .header-title {
+    display: flex;
+    padding: 8px 0 10px;
+  }
+
+  .user-avatar {
+    width: 45px;
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  .username {
+    padding-left: 20px;
+  }
+
+  .user-link {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .post-description {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10px;
+  }
+
+  .post-image {
+    height: 200px;
+    width: 100%;
+    display: block;
+  }
+</style>
+
+<mat-card class="post-mat-card">
+  <mat-card-header>
+    <mat-card-title class="header-title">
+      <img alt="avatar-user" [src]="retrievedImageUser" class="user-avatar">
+      <div class="username">
+        <a href="https://www.shutterstock.com/es/search/example+stamp?image_type=illustration" class="user-link">{{name}} {{lastname}}</a>
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="post-description">{{descripcion}}</p>
+
+    <div *ngFor="let element of arrayimage">
+      <img class="post-image" src="{{element.imagenUrl}}" alt="Card image">
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <app-Opinionpublication [content]="fullPost" [user]="idop"></app-Opinionpublication>
+    <button mat-button (click)="getComments()" id="seecomments"><mat-icon>comment</mat-icon></button>
+    <button mat-button (click)="openDialog()" id="buttonFlagPost"><mat-icon>flag</mat-icon></button>
+  </mat-card-actions>
+</mat-card>
