@@ -4,3 +4,18 @@ button{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
+ .post-form-mat-card {
+   width: calc(90%);
+   margin: auto;
+ }
+.example-full-width {
+  width: 100%;
+}
+.medium-width {
+  width: calc(50%);
+  margin:auto;
+}
+.orange-button {
+  background-color: #ffae42; /* Color naranja tipo amarillo */
+  color: #333; /* Color de texto oscuro */
+}
