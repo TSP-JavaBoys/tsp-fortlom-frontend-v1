@@ -1,10 +1,11 @@
 import { ArtistService } from 'src/app/services/artist/artist.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Forum } from 'src/app/models/forum';
 import { ForumService } from 'src/app/services/forum/forum.service';
+import { FanaticforumService } from 'src/app/services/fanaticforum/fanaticforum.service';
 @Component({
   selector: 'app-FanaticForumCreate',
   templateUrl: './FanaticForumCreate.component.html',
@@ -17,8 +18,8 @@ export class FanaticForumCreateComponent implements OnInit {
   isHidden=true
   idnumber!:number;
   dataSource !:MatTableDataSource<any>;
-  constructor(private formBuilder:FormBuilder,private service:ForumService,
-    private route:ActivatedRoute,private cd:Router,private ArtistService:ArtistService) {
+  constructor(private formBuilder:FormBuilder,private service:FanaticforumService,
+    private route:ActivatedRoute,private cd:Router,private ArtistService:ArtistService,private ActivatedRoute:ActivatedRoute) {
 this.Forum={}as Forum;
 this.Forum.forumname;
 
@@ -30,12 +31,12 @@ this.dataSource = new MatTableDataSource<any>();
       name:['',Validators.required],
       description:['',Validators.required],
      })
-     let pod=parseInt(this.route.snapshot.paramMap.get('id')!);
-    let id= pod;
-    this.idnumber=id;
-    let sa=(this.route.snapshot.url[0].path);
-    console.log(sa)
-    this.getartist()
+     this.ActivatedRoute.queryParams.subscribe((params: Params)=>{
+         this.idnumber= params['id']
+         console.log(this.idnumber)
+         this.getartist()
+     })
+   
   }
 
 crearforo(){

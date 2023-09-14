@@ -1,0 +1,73 @@
+<app-fanaticnavigation></app-fanaticnavigation>
+<div class="basic-container">
+  <img src="assets/Forum.png" class="responsive">
+  <div class="center">
+
+    <mat-card class="card">
+      <mat-card-header class="head">
+        <p class="forum">{{forum.forumname.toUpperCase()}}</p>
+        <button mat-fab class="but"  (click)="openDialog(forum.userAccount.id)"> <mat-icon class="color" id="buttonFlagPost">flag</mat-icon></button>
+      </mat-card-header>
+      <div class="center">
+        <p class="forum">{{forum.forumdescription}}</p>
+
+      </div>
+      <div class="start">
+        <p class="forum">Administrador: {{forum.userAccount.realname}} {{forum.userAccount.lastname}}</p>
+      </div>
+      <mat-card class="secundary">
+        <div class="center">
+          <p class="forum">Reglas del Foro</p>
+        </div>
+        <div class="center">
+          <p class="forum">{{checkrules()}}</p>
+        </div>
+        <mat-card-actions align="end">
+          <button mat-raised-button (click)="change()" id="writerulesbutton">Escriba nuevas Reglas</button>
+        </mat-card-actions>
+        <div *ngIf="hidden">
+          <mat-form-field appearance="fill" class="area" [formGroup]="rules">
+            <textarea formControlName="setrules" matInput type="text" [(ngModel)]="ForumRules.forumrules" id="writeForumRules"></textarea>
+           </mat-form-field>
+           <div class="button-row">
+             <button mat-raised-button  color="primary" [disabled]="!rules.valid" (click)="createrules()" id="acceptcondcutrules"> <mat-icon>add</mat-icon>Aceptar</button>
+             <button  mat-raised-button  color="warn" (click)="Limpiar2()"> <mat-icon>close</mat-icon>Limpiar</button>
+           </div>
+        </div>
+        <h1> Comentarios de Foro</h1>
+        <app-Fanatic-Forumcomment [comentarios]="forum.id"></app-Fanatic-Forumcomment>
+        <mat-card class="seconcard">
+          <mat-card-title class="title">Escriba un comentario</mat-card-title>
+          <mat-form-field appearance="fill" class="area" [formGroup]="newcommentform">
+            <mat-label>Nuevo Comentario </mat-label>
+            <textarea formControlName="comment" matInput type="comment" [(ngModel)]="Forumcomment.commentdescription" id="commentforum">pjjjj</textarea>
+          </mat-form-field>
+          <div class="button-row">
+            <button mat-raised-button  color="primary" [disabled]="!newcommentform.valid" (click)="crearcomentariodeforo()" id="acceptcommentforum"> <mat-icon>add</mat-icon>Aceptar</button>
+            <button  mat-raised-button  color="warn" (click)="Limpiar()"> <mat-icon>close</mat-icon>Limpiar</button>
+          </div>
+        </mat-card>
+
+      </mat-card>
+
+      
+</mat-card>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

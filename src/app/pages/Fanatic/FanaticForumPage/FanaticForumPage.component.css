@@ -1,0 +1,71 @@
+.responsive {
+    width: 100%;
+   
+  }
+  .card{
+    background-color:#18171c;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
+  }
+  .forum{
+    font-size: 1.2rem;
+    color: whitesmoke;
+  }
+  .head{
+    justify-content: space-between;
+  }
+  .color
+  {
+    color: black;
+  }
+  .start{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .area
+  {
+  
+  width: 100%;
+  
+  }
+  .button-row {
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  
+  }
+  .but{
+  
+  
+    background-color:#C8C8C8;
+    
+    
+    
+    
+    }
+    .secundary{
+        background-color: #232323;
+    }
+    h1{
+        text-align:end;
+        color: whitesmoke;
+        margin-top: 20px;
+    }
+    .seconcard{
+        background-color:#C8C8C8;
+        margin-bottom: 20px;
+        margin-left: 30%;
+    }
+    .basic-container {
+        background-size: cover;
+        
+        overflow: auto;
+        background-image: url(./FondoForum.png);
+        
+      }

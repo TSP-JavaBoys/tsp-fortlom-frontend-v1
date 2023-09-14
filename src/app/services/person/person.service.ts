@@ -10,8 +10,8 @@ import { Person } from 'src/app/models/Person';
 export class PersonService {
 
   //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/users';
-  //basePath = 'http://localhost:8080/api/v1/userservice/users';
-  basePath = 'https://fortlom.azurewebsites.nett/api/v1/userservice/songs';
+  basePath = 'http://localhost:8080/api/v1/userservice/users';
+  //basePath = 'https://fortlom.azurewebsites.nett/api/v1/userservice/songs';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -58,10 +58,14 @@ export class PersonService {
     return this.http.put<Person>(`${this.basePath}/changepassword/${id}`, JSON.stringify(item), this.httpOptions)
     .pipe(
       retry(2),
-      catchError(this.handleError));
+      catchError(this.handleError))
 
-
-
+  }
+  getByusername(username: string): Observable<Person> {
+    return this.http.get<Person>(`${this.basePath}/users/Username/${username}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
   }
 
 }
