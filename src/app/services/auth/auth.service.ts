@@ -19,7 +19,7 @@ export class AuthService {
   }
   //basePath = 'https://fortlom-account.herokuapp.com/auth';
   //basePath = 'http://localhost:8080/auth';
-  basePath = 'https://fortlomback.azurewebsites.net/auth';
+  basePath = 'https://fortlombackend.azurewebsites.net/auth';
   constructor(private http:HttpClient) { }
   handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {

@@ -11,7 +11,7 @@ export class PersonService {
 
   //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/users';
   //basePath = 'http://localhost:8080/api/v1/userservice/users';
-  basePath = 'https://fortlomback.azurewebsites.nett/api/v1/userservice/songs';
+  basePath = 'https://fortlombackend.azurewebsites.nett/api/v1/userservice/songs';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

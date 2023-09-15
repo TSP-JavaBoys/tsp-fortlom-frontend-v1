@@ -9,7 +9,7 @@ import { ForumRules } from 'src/app/models/ForumRules';
 })
 export class FanaticforumService {
   //basePath='http://localhost:8080/api/v1/fanaticforumservice'
-  basePath = 'https://fortlomback.azurewebsites.net/api/v1/userservice/fanaticforumservice';
+  basePath = 'https://fortlombackend.azurewebsites.net/api/v1/userservice/fanaticforumservice';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
