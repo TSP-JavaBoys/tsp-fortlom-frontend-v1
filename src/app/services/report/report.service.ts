@@ -11,7 +11,7 @@ export class ReportService {
 
  //basePath = 'https://fortlom-report.herokuapp.com/api/v1/reportservice';
  //basePath = 'http://localhost:8080/api/v1/reportservice';
-  basePath = 'https://fortlom.azurewebsites.net/api/v1/reportservicee';
+  basePath = 'https://fortlomback.azurewebsites.net/api/v1/reportservicee';
 
   httpOptions = {
     headers: new HttpHeaders({

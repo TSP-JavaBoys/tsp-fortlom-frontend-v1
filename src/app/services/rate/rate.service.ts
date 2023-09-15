@@ -10,7 +10,7 @@ export class RateService {
 
   //basePath = 'https://fortlom-support.herokuapp.com/api/v1/supportservice';
   //basePath = 'http://localhost:8080/api/v1/supportservice';
-  basePath = 'https://fortlom.azurewebsites.ne/api/v1/supportservice';
+  basePath = 'https://fortlomback.azurewebsites.ne/api/v1/supportservice';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

@@ -11,8 +11,8 @@ export class ArtistService {
 
 
   //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/artists';
-  basePath = 'http://localhost:8080/api/v1/userservice/artists';
-  //basePath = 'https://fortlom.azurewebsites.net/api/v1/userservice/artists';
+  //basePath = 'http://localhost:8080/api/v1/userservice/artists';
+  basePath = 'https://fortlomback.azurewebsites.net/api/v1/userservice/artists';
 
   httpOptions = {
     headers: new HttpHeaders({

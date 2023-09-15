@@ -10,7 +10,7 @@ import {catchError, retry} from "rxjs/operators";
 export class AlbumService {
 
   //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/albums';
-  basePath = 'https://fortlom.azurewebsites.net/api/v1/userservice/albums';
+  basePath = 'https://fortlomback.azurewebsites.net/api/v1/userservice/albums';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
