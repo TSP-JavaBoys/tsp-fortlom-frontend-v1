@@ -12,7 +12,7 @@
       <mat-grid-tile *ngFor="let i of artistList">
         <mat-card [style.width]="'65%'" class="artistCard" [style.border-radius]="'5%'" [style.padding]="'8px'">
             <mat-card-content class="cardContent">
-              <app-imageforlist [artist]="i.id" ></app-imageforlist>
+              <img src="https://i.ibb.co/yPyDg25/artist.jpg" alt="artist" style="width: 15rem">
               <div fxFlex fxFlexAlign="center">
                 <div fxLayout="row" class="artistName">
                 {{i.realname}} {{i.lastname}}
@@ -29,9 +29,9 @@
                 <app-follows [artist]="i"   [user]="idnumber"></app-follows>
               </div>
             </mat-card-content>
-         
+
         </mat-card>
-  
+
       </mat-grid-tile>
     </mat-grid-list>
   </div>
