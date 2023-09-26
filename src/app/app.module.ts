@@ -68,6 +68,9 @@ import {LoginComponent} from "./pages/Login/Login.component";
 import {MatCardModule} from "@angular/material/card";
 import { CorsInterceptor } from './interceptors/CorsInterceptor .service';
 import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/FanaticForumPage.component';
+import {MatSliderModule} from "@angular/material/slider";
+
+
 
 @NgModule({
   declarations: [
@@ -134,10 +137,12 @@ import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/Fana
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatSliderModule,
+
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })

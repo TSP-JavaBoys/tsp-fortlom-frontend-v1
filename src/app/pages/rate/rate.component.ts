@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Rate } from 'src/app/models/rate';
 import { RateService } from 'src/app/services/rate/rate.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import {MatSnackBar} from "@angular/material/snack-bar";
 @Component({
   selector: 'app-rate',
   templateUrl: './rate.component.html',
@@ -11,7 +12,7 @@ export class RateComponent implements OnInit {
 
   @Input() idcomment!:number
   idactualuser!:number
-  constructor(private rateservice:RateService,private route:ActivatedRoute) {
+  constructor(private rateservice:RateService,private route:ActivatedRoute,private snackBar: MatSnackBar) {
 
     this.rate={}as Rate;
 
@@ -49,8 +50,11 @@ export class RateComponent implements OnInit {
       if(response==false){
         this.rateservice.create(this.idcomment,this.idactualuser,this.rate).subscribe((response: any) => {
 
-          alert("Se ha calificado al artista")
-          console.log("Se ha calificado al artista")
+          this.snackBar.open('Se ha calificado al artista', 'Close', {
+            duration: 3000,
+            verticalPosition: 'bottom',
+            horizontalPosition: 'end'
+          });
 
         });
       }
@@ -59,8 +63,11 @@ export class RateComponent implements OnInit {
                        console.log(response.content[0])
                        console.log(this.rate.review)
                        this.rateservice.update(response.content[0].id,this.rate).subscribe((response:any)=>{
-                             alert("Se ha calificado al artista")
-                             console.log("Se ha calificado al artista")
+                         this.snackBar.open('Se ha calificado al artista', 'Close', {
+                           duration: 3000,
+                           verticalPosition: 'bottom',
+                           horizontalPosition: 'end'
+                         });
                              return(response)
 
                        })
