@@ -1,0 +1,12 @@
+<mat-card>
+    <p>{{rulestext}}</p>
+    <mat-form-field appearance="fill" class="area" [formGroup]="rules">
+      <textarea formControlName="setrules" matInput type="text" [(ngModel)]="ForumRules.forumrules" id="writeForumRules"></textarea>
+     </mat-form-field>
+     <div class="button-row">
+       <button mat-raised-button  color="primary" [disabled]="!rules.valid" (click)="createrules()" id="acceptcondcutrules"> <mat-icon>add</mat-icon>Aceptar</button>
+       <button  mat-raised-button  color="warn" (click)="Limpiar2()"> <mat-icon>close</mat-icon>Limpiar</button>
+     </div>
+
+
+</mat-card>
