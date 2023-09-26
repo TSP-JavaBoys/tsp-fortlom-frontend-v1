@@ -1,12 +1,20 @@
 
+<div class="example-label-container">
+  <label id="example-name-label" class="example-name-label">0</label>
+  <label class="example-value-label">{{slider.value}}</label>
+</div>
 <mat-slider
-  thumbLabel
   [displayWith]="formatLabel"
-  tickInterval="1"
+  [step]="1"
+  [min]="0"
+  [max]="5"
+  [discrete]="false"
+  [showTickMarks]="false"
   (click)="new_rate(value)"
-  [(ngModel)]="value" 
-  step="1"
-  min="0"
-  max="5"
-  aria-label="units"></mat-slider>
-  
+  aria-label="units">
+<input matSliderThumb [(ngModel)]="value" #slider>
+
+</mat-slider>
+
+
+
