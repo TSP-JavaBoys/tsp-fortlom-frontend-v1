@@ -9,7 +9,7 @@ import { Forum } from 'src/app/models/forum';
 })
 export class ArtistforumService {
 
-  basePath='http://localhost:8080/api/v1/artistforumservice';
+  basePath='https://fortlomsp.azurewebsites.net/api/v1/artistforumservice';
 
   httpOptions = {
     headers: new HttpHeaders({

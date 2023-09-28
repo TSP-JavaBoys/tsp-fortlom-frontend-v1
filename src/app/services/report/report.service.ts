@@ -10,8 +10,8 @@ import { Report } from 'src/app/models/report';
 export class ReportService {
 
  //basePath = 'https://fortlom-report.herokuapp.com/api/v1/reportservice';
- basePath = 'http://localhost:8080/api/v1/reportservice';
-  //basePath = 'https://fortlombackend.azurewebsites.net/api/v1/reportservicee';
+ //basePath = 'http://localhost:8080/api/v1/reportservice';
+  basePath = 'https://fortlomsp.azurewebsites.net/api/v1/reportservicee';
 
   httpOptions = {
     headers: new HttpHeaders({
