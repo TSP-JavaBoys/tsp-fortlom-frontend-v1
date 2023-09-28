@@ -1,32 +1,28 @@
 <app-ArtistNavegation></app-ArtistNavegation>
 
-<div class="basic-container">
+<div>
   <img src="assets/Forum.png" class="responsive">
-  <div align="end" class="mats">
 
-  <button mat-raised-button class="add" (click)="insertforum()" id="add">Crear Foro</button>
-
-
+  <div class="centerbuton">
+    <button mat-raised-button class="buttonmain" color="primary" id="add" (click)="insertforum()">Crear nuevo foro</button>
   </div>
-  
+
   <div class="Cardforum">
 
-    <div *ngFor="let element of dataSource.data">
-      <mat-card class="card">
-        <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title class="forumtitle" id="forumtitle">{{element.forumname}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content></mat-card-content>
-      <mat-divider></mat-divider>
-        <mat-card-actions align="end">
-          <button mat-button (click)="enterforumpage(element.id)" id="enterforum"><mat-icon>flag</mat-icon></button>
-        </mat-card-actions>
-        <mat-card-footer>
-          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        </mat-card-footer>
+    <p class="forumtitle">Lista de foros</p>
+    <div *ngFor="let item of dataSource.data" class="center">
+      <mat-card>
+        <div class="card">
+          <div class="card__detail">
+            <img src="../../../../assets/images/forum.png" class="imgforum">
+            <div class="info">
+              <h2 class="forumname">{{item.forumname}}</h2>
+              <p class="person">Creado por {{item.userAccount.realname}} {{item.userAccount.lastname}}</p>
+            </div>
+          </div>
+          <button mat-button (click)="gotoForumPage(item)"  id="enterforum" class="flag" ><mat-icon>flag</mat-icon></button>
+        </div>
       </mat-card>
-
-</div>
-</div>
+    </div>
+  </div>
 </div>

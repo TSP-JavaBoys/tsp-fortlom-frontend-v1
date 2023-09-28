@@ -72,6 +72,9 @@ import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/Fana
 import { ForumPageNewComponent } from './pages/forum-page-new/forum-page-new.component';
 import { ForumRulesComponent } from './pages/forum-page-new/forum-rules/forum-rules.component';
 import { ForumaddcommentComponent } from './pages/forum-page-new/forumaddcomment/forumaddcomment.component';
+import {
+  ArtistForumCreateComponentComponent
+} from "./pages/Artists/artist-forum-create-component/artist-forum-create-component.component";
 
 @NgModule({
   declarations: [
@@ -131,7 +134,8 @@ import { ForumaddcommentComponent } from './pages/forum-page-new/forumaddcomment
     FanaticForumPageComponent,
     ForumPageNewComponent,
     ForumRulesComponent,
-    ForumaddcommentComponent
+    ForumaddcommentComponent,
+    ArtistForumCreateComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -144,7 +148,7 @@ import { ForumaddcommentComponent } from './pages/forum-page-new/forumaddcomment
     MatCardModule
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })

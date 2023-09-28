@@ -35,12 +35,15 @@ import { CreateMusicComponent } from './pages/Artists/Album/CreateMusic/CreateMu
 import { OneAlbumComponent } from './pages/Artists/Album/OneAlbum/OneAlbum.component';
 import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/FanaticForumPage.component';
 import { ForumPageNewComponent } from './pages/forum-page-new/forum-page-new.component';
+import {
+  ArtistForumCreateComponentComponent
+} from "./pages/Artists/artist-forum-create-component/artist-forum-create-component.component";
 
 const routes: Routes = [
 
   {path:'HomeArtist/:id',component:HomeArtistComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] } },
   {path:'HomeArtist/:id/ArtistForum',component:ArtistForumsComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
-  {path:'HomeArtist/:id/ArtistForum/CreateForum',component:FanaticForumCreateComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
+  {path:'HomeArtist/:id/ArtistForum/CreateForum',component:ArtistForumCreateComponentComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path:'HomeArtist/:id/ArtistForum/ForumPage/:forumid',component:ForumPageComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path:'HomeArtist/:id/Event',component:ArtistEventComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path:'HomeArtist/:id/Event/CreateEvent',component:ArtistEventCreateComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
