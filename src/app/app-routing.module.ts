@@ -60,6 +60,9 @@ const routes: Routes = [
   {path:'HomeFanatic/:id/FanaticForum',component:FanaticForumComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/FanaticForum/CreateForum',component:FanaticForumCreateComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/FanaticForum/ForumPage',component:ForumPageNewComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
+  {path:'HomeArtist/:id/ArtistForum/ForumPage',component:ForumPageNewComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist'] }},
+
+
   {path:'HomeFanatic/:id/artists',component:ArtistListComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path: 'HomeFanatic/:id/posts',component:PostPageComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/ConfigureFanatic',component:ConfigurationFanaticComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},

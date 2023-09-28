@@ -86,8 +86,10 @@ export class ArtistForumsComponent implements OnInit {
     this.cd.navigate(['/HomeArtist',this.idnumber,'ArtistForum','CreateForum'])
   }
 
-  gotoForumPage(forum:Forum){
-    this.cd.navigate(['HomeArtist',this.idnumber,'ArtistForum','ForumPage'], {queryParams:{forum:forum}});
+  gotoForumPage(item:Forum){
+   
+    const forum = JSON.stringify(item);
+    this.cd.navigate(['HomeArtist',this.idnumber,'ArtistForum','ForumPage'],{queryParams:{forum:forum}})
   }
   //HomeArtist/1/ArtistForum/ForumPage
 
