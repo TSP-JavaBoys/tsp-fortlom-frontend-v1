@@ -1,0 +1,60 @@
+<div *ngIf="isHidden">
+    <app-fanaticnavigation></app-fanaticnavigation>
+    </div>
+    <div *ngIf="!isHidden">
+      <app-ArtistNavegation></app-ArtistNavegation>
+    </div>
+<div class="container">
+    <img src="assets/Forum.png" class="responsive">
+    <h1>Pagina principal del Foro: {{forum.forumname.toUpperCase()}}</h1>
+    <button mat-fab class="but"  (click)="openDialog(forum.userAccount.id)"> <mat-icon class="color" id="buttonFlagPost">flag</mat-icon></button>
+
+    <div class="center2">
+        <mat-card class="descripcard">
+            <p class="description">{{forum.forumdescription}}</p>
+        </mat-card>
+    </div>
+  
+    <br>
+    <div class="center2">
+        <mat-card class="card">
+            <img src="../../../assets/reglas-negocio.jpg">
+            <div class="center2">
+                <p>Reglas del Foro</p>
+              </div>
+              <div class="center2">
+                <button mat-raised-button class="see" (click)="openTRules()">Ver</button>
+           </div>
+        </mat-card>
+
+    </div>
+    <br>
+    <div>
+        <button mat-fab extended color="primary" (click)=" opencreate()">
+            <mat-icon>add</mat-icon>
+            Nuevo Comentario
+          </button>
+          <br>
+        <h2 class="commenttext">COMENTARIOS DEL FORO</h2>
+        <br>
+        <app-Fanatic-Forumcomment [comentarios]="forum.id"></app-Fanatic-Forumcomment>
+
+     <mat-card>
+         
+     </mat-card>
+
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+</div>

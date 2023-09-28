@@ -34,6 +34,7 @@ import { CreateAlbumComponent } from './pages/Artists/Album/CreateAlbum/CreateAl
 import { CreateMusicComponent } from './pages/Artists/Album/CreateMusic/CreateMusic.component';
 import { OneAlbumComponent } from './pages/Artists/Album/OneAlbum/OneAlbum.component';
 import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/FanaticForumPage.component';
+import { ForumPageNewComponent } from './pages/forum-page-new/forum-page-new.component';
 
 const routes: Routes = [
 
@@ -55,7 +56,7 @@ const routes: Routes = [
   {path:'HomeFanatic/:id/Event',component:EventFanaticComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/FanaticForum',component:FanaticForumComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/FanaticForum/CreateForum',component:FanaticForumCreateComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
-  {path:'HomeFanatic/:id/FanaticForum/ForumPage',component:FanaticForumPageComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
+  {path:'HomeFanatic/:id/FanaticForum/ForumPage',component:ForumPageNewComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/artists',component:ArtistListComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path: 'HomeFanatic/:id/posts',component:PostPageComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
   {path:'HomeFanatic/:id/ConfigureFanatic',component:ConfigurationFanaticComponent,canActivate: [FanaticGuard], data: { expectedRol: ['Role_Fanatic'] }},
@@ -65,7 +66,7 @@ const routes: Routes = [
 
   {path:'',component:LoginComponent,canActivate: [LoginGuard], data: { expectedRol: ['Role_Artist','Role_Fanatic','Role_Upgrade_Artist'] }},
   {path:'login',component:LoginComponent,canActivate: [LoginGuard], data: { expectedRol: ['Role_Artist','Role_Fanatic','Role_Upgrade_Artist'] }},
-
+  {path:'forumpage',component:ForumPageNewComponent},
 
   {path:'registerartist',component:RegisterArtistComponent,canActivate: [LoginGuard], data: { expectedRol: ['Role_Artist','Role_Fanatic','Role_Upgrade_Artist'] }},
   {path:'registerfanatic',component:RegisterFanaticComponent},

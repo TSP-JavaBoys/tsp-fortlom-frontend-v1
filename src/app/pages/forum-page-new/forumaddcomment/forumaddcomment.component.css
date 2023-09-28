@@ -1,0 +1,10 @@
+.seconcard{
+    background-color:#C8C8C8;
+    margin-bottom: 20px;
+}
+.button-row {
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  
+  }

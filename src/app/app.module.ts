@@ -1,3 +1,4 @@
+import { ForumRules } from './models/ForumRules';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -68,9 +69,9 @@ import {LoginComponent} from "./pages/Login/Login.component";
 import {MatCardModule} from "@angular/material/card";
 import { CorsInterceptor } from './interceptors/CorsInterceptor .service';
 import { FanaticForumPageComponent } from './pages/Fanatic/FanaticForumPage/FanaticForumPage.component';
-import {MatSliderModule} from "@angular/material/slider";
-
-
+import { ForumPageNewComponent } from './pages/forum-page-new/forum-page-new.component';
+import { ForumRulesComponent } from './pages/forum-page-new/forum-rules/forum-rules.component';
+import { ForumaddcommentComponent } from './pages/forum-page-new/forumaddcomment/forumaddcomment.component';
 
 @NgModule({
   declarations: [
@@ -127,7 +128,10 @@ import {MatSliderModule} from "@angular/material/slider";
     OneAlbumComponent,
     UpgradeArtistDialogComponent,
     ImagealbumComponent,
-    FanaticForumPageComponent
+    FanaticForumPageComponent,
+    ForumPageNewComponent,
+    ForumRulesComponent,
+    ForumaddcommentComponent
   ],
   imports: [
     BrowserModule,
@@ -137,12 +141,10 @@ import {MatSliderModule} from "@angular/material/slider";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule,
-    MatSliderModule,
-
+    MatCardModule
   ],
   providers: [
-
+    
   ],
   bootstrap: [AppComponent]
 })
