@@ -12,8 +12,8 @@ export class PublicationService {
 
   //basePath ='https://fortlom-content.herokuapp.com/api/v1/contentservice';
 
-  //basePath ='http://localhost:8080/api/v1/contentservice';
-  basePath = 'https://fortlomsp.azurewebsites.net/api/v1/contentservice';
+  basePath ='http://localhost:8080/api/v1/contentservice';
+  //basePath = 'https://fortlomsp.azurewebsites.net/api/v1/contentservice';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -61,14 +61,14 @@ export class PublicationService {
 
   // Update Publicacion
   update(id: any, item: any): Observable<Publication> {
-    return this.http.put<Publication>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+    return this.http.put<Publication>(`${this.basePath}/publications/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
 
   // Delete Publicacion
-  delete(id: any) {
+  delete(id: number) {
     return this.http.delete(`${this.basePath}/publications/${id}`, this.httpOptions)
       .pipe(
         retry(2),

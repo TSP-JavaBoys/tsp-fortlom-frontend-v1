@@ -1,0 +1,44 @@
+
+<div *ngFor="let element of dataSource.data">
+
+
+<mat-card>
+    <form [formGroup]="editform">
+        <p class="text">{{element.description}}</p>
+    <mat-form-field class="input" appearance="outline">
+        <input matInput class="text" formControlName="description" [(ngModel)]="UpdateDescription.description">
+    </mat-form-field>
+</form>
+    <button mat-raised-button color="accent" (click)="update(element.id)">Actualizar</button>
+    <button mat-raised-button color="warn" (click)="delete(element.id)">Eliminar</button>
+
+</mat-card>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+

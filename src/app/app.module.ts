@@ -75,6 +75,7 @@ import { ForumaddcommentComponent } from './pages/forum-page-new/forumaddcomment
 import {
   ArtistForumCreateComponentComponent
 } from "./pages/Artists/artist-forum-create-component/artist-forum-create-component.component";
+import { MypostsComponent } from './pages/publication/post-list/myposts/myposts.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +136,8 @@ import {
     ForumPageNewComponent,
     ForumRulesComponent,
     ForumaddcommentComponent,
-    ArtistForumCreateComponentComponent
+    ArtistForumCreateComponentComponent,
+    MypostsComponent
   ],
   imports: [
     BrowserModule,
