@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import {Song} from "../../../../../../../DESCARGASSSSSS/Team Software Process (TSP)/TSP TB3/tsp-fortlom-frontend-v1-develop/src/app/models/Song";
 import {catchError, retry} from "rxjs/operators";
+import {Song} from "../../models/Song";
 
 @Injectable({
   providedIn: 'root'
