@@ -5,29 +5,30 @@
   <app-fanaticnavigation></app-fanaticnavigation>
 </div>
 
-<div class="basic-container" style="background-image: url('assets/images/artistlist.jpg');">
+<div class="basic-container" style="background-image: url('https://st.depositphotos.com/1741969/4313/i/450/depositphotos_43131419-stock-photo-records-stack-and-old-record.jpg');">
 
   <div style="padding-bottom: 10px;"></div>
+
   <div class="introTitle">
     Come, see and hear all the albums in Fortlom!
   </div>
 
   <div *ngIf="whois == 'HomeArtist'">
     <div class="button-container">
-      <button class="button-add" (click)="CreateAlbum()" id="add">ADD ALBUM</button>
+      <button class="button-add" (click)="CreateAlbum()" id="add">Add Album</button>
     </div>
-    <div style="padding-bottom: 10px;"></div>
   </div>
+
+
   <div *ngIf="whois == 'HomeArtist'">
-    <div style="padding-bottom: 120px;"></div>
   </div>
   <div *ngIf="whois == 'HomeFanatic'">
-    <div style="padding-bottom: 200px;"></div>
+
   </div>
   <mat-grid-list cols="3" rowHeight="500px">
     <mat-grid-tile *ngFor="let album of dataSource.data">
       <button mat-button (click)="GoToOneAlbum(album.id)">
-        <mat-card style="border-radius: 20px;">
+        <mat-card style="border-radius: 15px;">
           <mat-card-content class="cardContent">
             <mat-card-title>{{album.name}}</mat-card-title>
             <div>{{album.description}}</div>
@@ -38,5 +39,5 @@
       </button>
     </mat-grid-tile>
   </mat-grid-list>
-  <div style="padding-bottom: 20px;"></div>
+
 </div>
