@@ -7,13 +7,9 @@ import { Event } from 'src/app/models/event';
   providedIn: 'root'
 })
 export class EventService {
-
-
-
-
-//basePath = 'https://fortlom-content.herokuapp.com/api/v1/contentservice';
-//basePath = 'http://localhost:8080/api/v1/contentservice';
-basePath = 'https://fortlomsp.azurewebsites.net/api/v1/contentservice';
+  //basePath = 'https://fortlom-content.herokuapp.com/api/v1/contentservice';
+  basePath = 'http://localhost:8080/api/v1/contentservice';
+  //basePath = 'https://fortlomsp.azurewebsites.net/api/v1/contentservice';
 httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',

@@ -24,14 +24,12 @@
     <mat-error *ngIf="createform.controls['description'].dirty && createform.hasError('required') || createform.controls['description'].invalid">Es requerido la descripcion</mat-error>
   </mat-form-field>
   <mat-card-footer align="end">
-  
-  
+
   <button mat-button class="but" [disabled]="!createform.valid" (click)="CrearAlbum()" id="createforum">Create</button>
-  
-  
+
   </mat-card-footer>
-  
-  
+
+
 </mat-card>
 <div style="padding-bottom: 24%;"></div>
 </div>

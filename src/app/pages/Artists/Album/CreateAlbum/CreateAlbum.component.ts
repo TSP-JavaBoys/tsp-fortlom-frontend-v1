@@ -35,17 +35,16 @@ export class CreateAlbumComponent implements OnInit {
   }
 
   CrearAlbum(){
-    console.log(this.objectAlbum)
+    console.log(this.objectAlbum);
     this.albumService.create(this.idurl,this.objectAlbum).subscribe((response: any) => {
       this.dataSource.data.push( {...response});
       this.dataSource.data = this.dataSource.data.map((o: any) => { return o; });
       alert("Se creo el álbum correctamente")
-      
+
      if(this.selectedFile!=undefined){
 
       this.MultimediaService.createimageforAlbum(this.selectedFile,response.id).subscribe((response:any)=>{
         this.cd.navigate(["HomeArtist",this.idurl,'Albums'])
-
       })
      }else{
       this.cd.navigate(["HomeArtist",this.idurl,'Albums'])

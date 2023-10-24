@@ -10,7 +10,7 @@ import { Music } from 'src/app/models/Music';
 export class MusicService {
 
   //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/songs';
-  basePath = 'http://localhost:8080/api/v1/userservice/songs';
+  basePath = 'http://localhost:8080/api/v1/userservice/albums/songs';
   //basePath = 'https://fortlomsp.azurewebsites.net/api/v1/userservice/songs';
   httpOptions = {
     headers: new HttpHeaders({
@@ -33,12 +33,12 @@ export class MusicService {
     return throwError('Something happened with request, please try again later');
   }
 
-  update(id: any, item: any): Observable<Music> {
+  /*update(id: any, item: any): Observable<Music> {
     return this.http.put<Music>(`${this.basePath}/song/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
-  }
+  }*/
 
   getSongsByAlbumId(id: any): Observable<Music> {
     return this.http.get<Music>(`${this.basePath}/album/${id}/songs`, this.httpOptions)

@@ -14,7 +14,7 @@ export class CreateMusicComponent implements OnInit {
   createform!:FormGroup;
   dataSource: MatTableDataSource<any>;
   objectMusic:Music;
-  categories:string[] = ["Rock","Pop","Metal","Regueton","Jazz","Classic","Blues","Country"]
+  //categories:string[] = ["Rock","Pop","Metal","Regueton","Jazz","Classic","Blues","Country"]
   idurl!:number
   albumidurl!:number;
   constructor(private musicService:MusicService, private formBuilder:FormBuilder,private route:ActivatedRoute, private cd:Router) {
@@ -26,7 +26,7 @@ export class CreateMusicComponent implements OnInit {
     this.createform=this.formBuilder.group({
       name:['',Validators.required],
       musicurl:['',Validators.required],
-      category:['',Validators.required],
+      //category:['',Validators.required],
      })
 
     let pod=parseInt(this.route.snapshot.paramMap.get('id')!);
@@ -48,5 +48,5 @@ export class CreateMusicComponent implements OnInit {
       alert("campos mal puestos")
     });
   }
-  
+
 }
