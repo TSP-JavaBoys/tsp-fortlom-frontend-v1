@@ -6,6 +6,9 @@
 <div class="center">
   <button mat-raised-button (click)="getPosts()" id="seeposts">See Posts</button>
 </div>
+<div class="center">
+  <button mat-raised-button (click)="myposts()" id="seemyposts">Ver mis publicaciones</button>
+</div>
 <div *ngIf="haveInfo">
   <div *ngFor="let a of studentData">
     <br/>

@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
@@ -12,6 +11,7 @@ export class ReportService {
  //basePath = 'https://fortlom-report.herokuapp.com/api/v1/reportservice';
  //basePath = 'http://localhost:8080/api/v1/reportservice';
  basePath = 'https://fortlomsp.azurewebsites.net/api/v1/reportservicee';
+
 
   httpOptions = {
     headers: new HttpHeaders({

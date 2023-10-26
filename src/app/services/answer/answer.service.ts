@@ -10,8 +10,8 @@ export class AnswerService {
 
 
   //basePath ='https://fortlom-answer.herokuapp.com/api/v1/answerservice';
-  //basePath ='http://localhost:8080/api/v1/answerservice';
-  basePath = 'https://fortlomsp.azurewebsites.net/api/v1/answerservice';
+  basePath ='http://localhost:8080/api/v1/answerservice';
+  //basePath = 'https://fortlomsp.azurewebsites.net/api/v1/answerservice';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

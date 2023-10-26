@@ -1,4 +1,6 @@
+import { MypostsComponent } from './myposts/myposts.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatTableDataSource} from "@angular/material/table";
 import { ActivatedRoute } from '@angular/router';
 import { FanaticService } from 'src/app/services/fanatic/fanatic.service';
@@ -16,7 +18,7 @@ export class PostListComponent implements OnInit {
   idurl!:number
   isFanatic:boolean = false
 
-  constructor(private postService: PublicationService,private ActivatedRoute:ActivatedRoute, private fanaticService:FanaticService) {
+  constructor(private postService: PublicationService,private ActivatedRoute:ActivatedRoute, private fanaticService:FanaticService,public dialog:MatDialog) {
     this.studentData = {}
     this.dataSource = new MatTableDataSource<any>();
     this.haveInfo = false;
@@ -45,5 +47,13 @@ export class PostListComponent implements OnInit {
       }
     });
   }
+  myposts(){
+    const dialogRef = this.dialog.open(MypostsComponent, {
+      width: '500px',
+      data: {}
+    });
 
+
+
+  }
 }
