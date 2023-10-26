@@ -10,7 +10,8 @@ margin-top: 30px;
   height:10%;
   font-size: 20px;
   color:black;
-  background-color:#9CC7EF
+  background-color:#f94c10;
+  padding: 10px;
 }
 .con{
 margin-left: 50px;
@@ -19,3 +20,14 @@ margin-bottom: 10px;
 width: 50%;
   border-color: black;
 }
+
+mat-card{
+  padding: 3rem;
+  background-color: #ffe8a1;
+}
+.mat-card-title {
+  text-align: center;
+}
+
+
+

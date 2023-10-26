@@ -5,27 +5,26 @@
     height: 100%;
     width: 100%;
     position: fixed;
-    background-position: 50% 50%;
-    padding-top: 2rem;
     overflow: auto;
-    
-  }
-  .introTitle{
-  
-    font-family: Arial, Helvetica, sans-serif;
-    color:whitesmoke;
-    
-    font-style: normal;
-    font-size: 60px;
-    font-weight: bold;
-    -webkit-text-stroke:0.25px;
-    -webkit-text-stroke-color: black;
-    position: absolute;
-    top: 200px;
-    left: 0;
-    right: 0;
-    line-height: 1.0em;
-    margin-left: 600px;
-    margin-right: 20px;
-    
+    background-color: black;
 }
+.mat-card-oneAlbum{
+  background-image: url("https://wallpaperaccess.com/full/496298.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
+  background-position: center 50%;
+  padding: 50px;
+  text-align: center;
+}
+.cardMusic-Content{
+  background-color: #F5F5F5;
+  color: black;
+}
+.add{
+  background-color: #FD8D14;
+}
+.add:hover{
+  background-color: #FFB000;
+  scale: 1.2;
+}
+
