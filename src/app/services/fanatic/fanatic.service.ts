@@ -9,8 +9,8 @@ import { Fanatic } from 'src/app/models/fanatic';
 export class FanaticService {
 
   //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/fanatics';
-  basePath = 'http://localhost:8080/api/v1/userservice/fanatics';
-  //basePath = 'https://fortlomsp.azurewebsites.net/api/v1/userservice/fanatics';
+  //basePath = 'http://localhost:8080/api/v1/userservice/fanatics';
+  basePath = 'https://fortlombackend.azurewebsites.net/api/v1/userservice/fanatics';
 
   httpOptions = {
     headers: new HttpHeaders({

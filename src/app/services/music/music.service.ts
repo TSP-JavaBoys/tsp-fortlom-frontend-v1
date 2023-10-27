@@ -11,7 +11,7 @@ export class MusicService {
 
   //basePath = 'https://fortlom-account.herokuapp.com/api/v1/userservice/songs';
   //basePath = 'http://localhost:8080/api/v1/userservice/albums/songs';
-  basePath = 'https://fortlomsp.azurewebsites.net/api/v1/userservice/songs';
+  basePath = 'https://fortlombackend.azurewebsites.net/api/v1/userservice/songs';
   
   httpOptions = {
     headers: new HttpHeaders({
