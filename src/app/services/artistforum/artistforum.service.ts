@@ -3,13 +3,15 @@ import { Injectable } from '@angular/core';
 import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
 import { Forum } from 'src/app/models/forum';
+import {Publication} from "../../models/publication";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtistforumService {
 
-  basePath='https://fortlombackend.azurewebsites.net/api/v1/artistforumservice';
+  basePath = 'http://localhost:8080/api/v1/artistforumservice';
+  //basePath='https://fortlombackend.azurewebsites.net/api/v1/artistforumservice';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -44,4 +46,28 @@ export class ArtistforumService {
         retry(2),
         catchError(this.handleError));
   }
+
+  // Update Publicacion
+  update(id: any, item: any): Observable<Forum> {
+    return this.http.put<Forum>(`${this.basePath}/forums/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  // Delete Publicacion
+  delete(id: number) {
+    return this.http.delete(`${this.basePath}/forums/${id}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+  getAllForumByArtistId(artistId:number): Observable<Forum>
+  {
+    return this.http.get<Forum>(`${this.basePath}/artists/${artistId}/forums`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
 }
