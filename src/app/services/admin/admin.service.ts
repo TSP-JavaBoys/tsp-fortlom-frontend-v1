@@ -14,11 +14,11 @@ export class AdminService {
     })
   }
 
-  //basePath =  'http://localhost:8080/auth';
-  //basePath2 = 'http://localhost:8080/api/v1/userservice/users/users/Username';
-  basePath = 'https://fortlombackend.azurewebsites.net/api/v1/userservice/users/users/Username';
-  basePath2 = 'https://fortlombackend.azurewebsites.net/auth';
-  
+  basePath =  'http://localhost:8080/auth';
+  basePath2 = 'http://localhost:8080/api/v1/userservice/users/users/Username';
+  //basePath = 'https://fortlombackend.azurewebsites.net/api/v1/userservice/users/users/Username';
+  //basePath2 = 'https://fortlombackend.azurewebsites.net/auth';
+
 
   constructor(private http:HttpClient) { }
   handleError(error: HttpErrorResponse) {

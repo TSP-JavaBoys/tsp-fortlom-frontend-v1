@@ -5,6 +5,7 @@
 
   <div class="centerbuton">
     <button mat-raised-button class="buttonmain" color="primary" id="add" (click)="insertforum()">Crear nuevo foro</button>
+    <button mat-raised-button class="buttonmain" color="primary" (click)="myForums()">See my forums</button>
   </div>
 
   <div class="Cardforum">
@@ -14,7 +15,7 @@
       <mat-card>
         <div class="card">
           <div class="card__detail">
-            <img src="../../../../assets/images/forum.png" class="imgforum">
+            <img src="https://i.ibb.co/GMn8GHh/foroartis.png" style="width: 20rem" class="imgforum">
             <div class="info">
               <h2 class="forumname">{{item.forumname}}</h2>
               <p class="person">Creado por {{item.userAccount.realname}} {{item.userAccount.lastname}}</p>

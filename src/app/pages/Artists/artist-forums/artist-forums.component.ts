@@ -10,6 +10,8 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {MatPaginator} from "@angular/material/paginator";
 import { ForumService } from 'src/app/services/forum/forum.service';
 import {ArtistforumService} from "../../../services/artistforum/artistforum.service";
+import {MypostsComponent} from "../../publication/post-list/myposts/myposts.component";
+import {MyListForumsComponent} from "./my-list-forums/my-list-forums.component";
 @Component({
   selector: 'app-artist-forums',
   templateUrl: './artist-forums.component.html',
@@ -87,11 +89,21 @@ export class ArtistForumsComponent implements OnInit {
   }
 
   gotoForumPage(item:Forum){
-   
+
     const forum = JSON.stringify(item);
     this.cd.navigate(['HomeArtist',this.idnumber,'ArtistForum','ForumPage'],{queryParams:{forum:forum}})
   }
   //HomeArtist/1/ArtistForum/ForumPage
+
+  myForums(){
+    const dialogRef = this.dialog.open(MyListForumsComponent, {
+      width: '500px',
+      data: {}
+    });
+
+
+
+  }
 
 
 }
