@@ -5,12 +5,14 @@
 
   <div class="form-group text-center">
     <label class="text-info">Te enviaremos un correo para recuperar la contraseña</label>
-    <input type="text" name="mailTo" id="mailTo" class="form-control"
+    <br>
+    <br>
+    <input type="text"  name="mailTo" id="mailTo" class="form-control"
         [(ngModel)]="mailTo" placeholder="Nombre de Usuario o Email" required>
 </div>
-
+<br>
 <div class="form-group">
-    <button class="btn btn-outline-success btn-block" [disabled]="!f.valid" type="submit" id="enter">
+    <button  mat-raised-button [disabled]="!f.valid" type="submit" id="enter">
         <i class="fas fa-sign-in-alt"></i> Enviar Correo</button>
 </div>
 

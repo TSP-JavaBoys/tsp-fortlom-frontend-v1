@@ -8,7 +8,7 @@ import { EmailValues } from 'src/app/models/email-values';
 })
 export class EmailPasswordService {
 
-  basePath="environment.changePasswordURL"
+  basePath="http://localhost:8080/email-password"
 constructor(private httpClient: HttpClient) { }
 
 public sendEmail(dto: EmailValues): Observable<any> {
