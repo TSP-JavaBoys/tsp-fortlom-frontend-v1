@@ -18,7 +18,7 @@ import { AnswerService } from 'src/app/services/answer/answer.service';
 })
 export class EventFanaticComponent implements OnInit {
 
-  
+
   eventdata!: Event;
   idevent !:number;
   userdata!: Person;
@@ -106,7 +106,7 @@ export class EventFanaticComponent implements OnInit {
           return response.content.length
     })
  }
-  
+
  Increasinglikes(id:number){
   this.eventService.getById(id).subscribe((response: any) => {
     this.dataSource.data = response;
@@ -150,6 +150,8 @@ decreaselikes(id:number){
 
   });
 
+
+
 }
 
 
@@ -173,17 +175,17 @@ decreaselikes(id:number){
   }
 
 
-  
+
 
   checkislickisinevent(link:string){
 
-        
+
         if(link=="" || link==null){
-          
+
           return false
         }
         return true
-        
+
 
   }
 
@@ -192,7 +194,7 @@ decreaselikes(id:number){
           return response.content[0].imagenUrl
     })
 }
-  
+
 
 
 

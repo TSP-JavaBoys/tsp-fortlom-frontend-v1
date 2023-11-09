@@ -24,12 +24,15 @@
             <app-imageforlist [artist]="arr2.id" class="imageEvent"></app-imageforlist>
           </div>
         </div>
-
         <div class="right-column">
           <div *ngFor ="let arr2 of arrayusers">
             <div *ngIf = "arr.artist.id == arr2.id" class="text2">
                 <h1>{{arr2.realname}} {{arr2.lastname}}</h1>
                 <p>{{arr.description}}</p>
+              <div class="manage-actions">
+                <mat-icon class="edit" (click)="updateEvent()" id="edit"><mat-icon>edit</mat-icon></mat-icon>
+                <mat-icon class="delete" (click)="updateEvent()" id="delete"><mat-icon>delete</mat-icon></mat-icon>
+              </div>
             </div>
           </div>
           <div>
