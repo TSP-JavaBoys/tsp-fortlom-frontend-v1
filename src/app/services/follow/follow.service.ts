@@ -11,8 +11,8 @@ export class FollowService {
 
 
   //basePath =  'https://fortlom-support.herokuapp.com/api/v1/supportservice';
-  basePath =  'http://localhost:8080/api/v1/supportservice';
-  //basePath = 'https://fortlombackend.azurewebsites.net/api/v1/supportservice';
+  //basePath =  'http://localhost:8080/api/v1/supportservice';
+  basePath = 'https://fortlomv5.azurewebsites.net/api/v1/supportservice';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
