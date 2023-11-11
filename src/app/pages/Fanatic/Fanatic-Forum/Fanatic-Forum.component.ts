@@ -3,6 +3,7 @@ import { FanaticforumService } from './../../../services/fanaticforum/fanaticfor
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Forum } from 'src/app/models/forum';
+
 @Component({
   selector: 'app-Fanatic-Forum',
   templateUrl: './Fanatic-Forum.component.html',
@@ -34,4 +35,11 @@ export class FanaticForumComponent implements OnInit {
 
   }
 
+  updateForum(forumId: any) {
+
+  }
+
+  deleteForum(forumId: number) {
+
+  }
 }
