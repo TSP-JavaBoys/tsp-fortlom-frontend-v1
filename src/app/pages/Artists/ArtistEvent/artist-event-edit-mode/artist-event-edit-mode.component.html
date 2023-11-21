@@ -1,0 +1,28 @@
+<form #editEventForm="ngForm" class="eventEdit">
+  <div>
+    <mat-form-field class="input1" appearance="outline">
+      <mat-icon matPrefix>celebration</mat-icon>
+      <input matInput placeholder="Event Name" name="EventName" required [(ngModel)]="eventdata.name" id="seteventname">
+      <mat-error>It is required</mat-error>
+    </mat-form-field>
+  </div>
+  <mat-divider></mat-divider>
+  <div>
+    <mat-form-field class="input2" appearance="outline">
+      <mat-icon matPrefix>description</mat-icon>
+      <input matInput placeholder="Event Description" name="EventDescription" required [(ngModel)]="eventdata.description" id="seteventdescription">
+      <mat-error>It is required</mat-error>
+    </mat-form-field>
+  </div>
+  <mat-divider></mat-divider>
+  <div>
+    <mat-form-field class="input4" appearance="outline">
+      <mat-icon matPrefix>local_activity</mat-icon>
+      <input matInput placeholder="Event Ticket Link" name="EventTicketLink" [(ngModel)]="eventdata.ticketLink" id="seteventticketlink">
+      <mat-error>It is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <button class="save" mat-raised-button (click)="Save()"  [disabled]="!editEventForm.valid">Save</button>
+  <button class="cancel" mat-button (click)="Cancel()">Cancel</button>
+</form>

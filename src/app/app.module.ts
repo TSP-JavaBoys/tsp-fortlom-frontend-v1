@@ -77,6 +77,10 @@ import {
 } from "./pages/Artists/artist-forum-create-component/artist-forum-create-component.component";
 import { MypostsComponent } from './pages/publication/post-list/myposts/myposts.component';
 import { MyListForumsComponent } from './pages/Artists/artist-forums/my-list-forums/my-list-forums.component';
+import {
+  ArtistEventEditModeComponent
+} from "./pages/Artists/ArtistEvent/artist-event-edit-mode/artist-event-edit-mode.component";
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -139,7 +143,8 @@ import { MyListForumsComponent } from './pages/Artists/artist-forums/my-list-for
     ForumaddcommentComponent,
     ArtistForumCreateComponentComponent,
     MypostsComponent,
-    MyListForumsComponent
+    MyListForumsComponent,
+    ArtistEventEditModeComponent
   ],
   imports: [
     BrowserModule,
@@ -149,7 +154,8 @@ import { MyListForumsComponent } from './pages/Artists/artist-forums/my-list-for
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
   ],
   providers: [
 

@@ -7,6 +7,7 @@ import { Event } from 'src/app/models/event';
   providedIn: 'root'
 })
 export class EventService {
+  private currentEvent: Event | null = null;
   //basePath = 'https://fortlom-content.herokuapp.com/api/v1/contentservice';
   basePath = 'http://localhost:8080/api/v1/contentservice';
   //basePath = 'https://fortlomv5.azurewebsites.net/api/v1/contentservice';
@@ -18,7 +19,12 @@ httpOptions = {
 }
 
 constructor(private http: HttpClient) { }
-
+  setCurrentEvent(event: Event) {
+    this.currentEvent = event;
+  }
+  getCurrentEvent(): Event | null {
+    return this.currentEvent;
+  }
 handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {
     console.log(`An error occurred: ${error.error.message} `);
@@ -78,6 +84,16 @@ updateEventreleaseddate(eventId:number,releasedate:string): Observable<Event>{
 
 
 }
+  updateEvent(eventId: number, item: any): Observable<Event> {
+    return this.http.put<Event>(`${this.basePath}/eventupdate/${eventId}`, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(error => {
+          console.error('Error en la solicitud:', error);
+          return this.handleError(error);
+        })
+      );
+  }
 // Delete Event
 delete(id: any) {
   return this.http.delete(`${this.basePath}/event/${id}`, this.httpOptions)

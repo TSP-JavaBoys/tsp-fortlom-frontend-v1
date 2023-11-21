@@ -1,0 +1,10 @@
+.eventEdit{
+  padding: 2rem;
+  border-radius: 2rem;
+}
+.save{
+  background-color: #E9B824;
+}
+.cancel{
+  background-color: #D21312;
+}
