@@ -16,6 +16,6 @@ button{
   margin:auto;
 }
 .orange-button {
-  background-color: #ffae42; /* Color naranja tipo amarillo */
-  color: #333; /* Color de texto oscuro */
+  background-color: #ffae42;
+  color: #333;
 }

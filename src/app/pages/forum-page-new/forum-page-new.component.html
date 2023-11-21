@@ -14,11 +14,11 @@
             <p class="description">{{forum.forumdescription}}</p>
         </mat-card>
     </div>
-  
+
     <br>
     <div class="center2">
-        <mat-card class="card">
-            <img src="../../../assets/reglas-negocio.jpg">
+        <mat-card class="card" style="margin: 1rem">
+            <img style="width: 20%;display: block;  margin: auto; margin-top: 2rem" src="../../../assets/reglas-negocio.jpg">
             <div class="center2">
                 <p>Reglas del Foro</p>
               </div>
@@ -30,7 +30,7 @@
     </div>
     <br>
     <div>
-        <button mat-fab extended color="primary" (click)=" opencreate()">
+        <button mat-fab extended style="background-color: #c69500; margin-left: 10rem" (click)=" opencreate()">
             <mat-icon>add</mat-icon>
             Nuevo Comentario
           </button>
@@ -40,12 +40,12 @@
         <app-Fanatic-Forumcomment [comentarios]="forum.id"></app-Fanatic-Forumcomment>
 
      <mat-card>
-         
+
      </mat-card>
 
 
     </div>
-    
+
 
 
 

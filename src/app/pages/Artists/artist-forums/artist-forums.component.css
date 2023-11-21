@@ -20,7 +20,7 @@
   .card
   {
     background-color:white;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
   .add
   {
@@ -64,16 +64,76 @@
     background-image: url(./FondoForum.png);
 
   }
-  .Cardforum {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
+.Cardforum {
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
   .example-header-image {
     background-image: url('https://media.revistavanityfair.es/photos/60e82b88bf8d45dd8c6f5f39/master/w_3638,h_3006,c_limit/228632.jpg');
     background-size: cover;
   }
 
-
-button{
-  margin-right: 50px;
+.fondoForumArtis {
+  position: relative;
+  text-align: center;
 }
+
+.responsive {
+  display: block;
+  margin: 0 auto;
+}
+
+.buttonmain{
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+  background-color: yellow;
+  padding: 2rem;
+}
+.forumtitle {
+  background-color: #d6d8d9;
+  margin: 5rem;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Arial", sans-serif;
+  text-shadow: 2px 2px 4px #cca027;
+}
+
+.mat-card {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+}
+
+.card__detail {
+  display: grid;
+  place-items: center;
+  grid-gap: 1rem;
+}
+
+.imgforum {
+  width: 20rem;
+}
+
+.info {
+  text-align: center;
+}
+
+#enterforum {
+  display: grid;
+  place-items: center;
+}
+
+.flag {
+  margin-top: 1rem;
+}
+
+
+

@@ -1,27 +1,31 @@
 <app-ArtistNavegation></app-ArtistNavegation>
 
 <div>
+  <div class="fondoForumArtis">
   <img src="assets/Forum.png" class="responsive">
-
-  <div class="centerbuton">
-    <button mat-raised-button class="buttonmain" color="primary" id="add" (click)="insertforum()">Crear nuevo foro</button>
-    <button mat-raised-button class="buttonmain" color="primary" (click)="myForums()">See my forums</button>
+      <button style="margin-left: 20%; font-size: 20px" mat-raised-button class="buttonmain"  id="add" (click)="insertforum()">Crear nuevo foro</button>
+      <button style="font-size: 20px" mat-raised-button class="buttonmain"  (click)="myForums()">Ver mis Foros</button>
   </div>
+
 
   <div class="Cardforum">
 
-    <p class="forumtitle">Lista de foros</p>
+    <mat-card style="margin: 1rem;background-color:#CDCDCD">
+    <p style="background-color: #CDCDCD; color: #FFFFFF" class="forumtitle">LISTA DE FOROS</p>
+    </mat-card>
     <div *ngFor="let item of dataSource.data" class="center">
-      <mat-card>
-        <div class="card">
-          <div class="card__detail">
+      <mat-card style="background-color: #fff3cd;margin: 3rem">
+        <div class="card" style="background-color: #fff3cd" >
+          <div class="card__detail" style="background-color: #fff3cd">
             <img src="https://i.ibb.co/GMn8GHh/foroartis.png" style="width: 20rem" class="imgforum">
             <div class="info">
               <h2 class="forumname">{{item.forumname}}</h2>
               <p class="person">Creado por {{item.userAccount.realname}} {{item.userAccount.lastname}}</p>
             </div>
           </div>
-          <button mat-button (click)="gotoForumPage(item)"  id="enterforum" class="flag" ><mat-icon>flag</mat-icon></button>
+          <mat-card style="background-color: #dddddd">
+          <button mat-button (click)="gotoForumPage(item)"  id="enterforum" class="flag" >Ver</button>
+          </mat-card>
         </div>
       </mat-card>
     </div>
