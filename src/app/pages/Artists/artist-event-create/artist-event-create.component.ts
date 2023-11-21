@@ -66,11 +66,16 @@ export class ArtistEventCreateComponent implements OnInit {
       let id = pod;
       this.idevent=id;
       console.log(this.idevent);
-      
-    this.getByIdUser(1)
-    }
-  
-    getAllEvents() {
+
+
+       this.getByIdUser(1)
+       if(this.isEditMode){
+         this.eventdata = this.eventService.getCurrentEvent()!;
+       }
+     }
+
+
+  getAllEvents() {
       this.eventService.getAll().subscribe((response: any) => {
         this.dataSource.data = response.content;
         this.dataSource.paginator=this.paginator;
@@ -79,26 +84,26 @@ export class ArtistEventCreateComponent implements OnInit {
         console.log(this.arrayevents)
       });
     }
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
     setfecha( event: MatDatepickerInputEvent<Date>){
       console.log(event.value)
       this.eventdata.registerdate=event.value!
     }
-  
-  
-   
-  
+
+
+
+
     addEvent() {
       console.log(this.idevent);
       console.log(this.eventdata);
       //this.eventdata.eventlikes=0
       this.eventService.create(this.idevent,this.eventdata).subscribe((response: any) => {
-       
+
         this.arrayevents.push( {...response});
         this.arrayevents = this.arrayevents.map((o: any) => { return o; });
         this.cd.navigate(['/HomeArtist',this.idevent,"Event"])
@@ -107,20 +112,20 @@ export class ArtistEventCreateComponent implements OnInit {
       });
 
     }
-  
-    
-  
+
+
+
     cancelEdit() {
       this.isEditMode = false;
       this.EventForm.resetForm();
     }
-  
-    
-  
-    
-  
+
+
+
+
+
     updateEvent() {
-      this.eventService.update(this.eventdata.id, this.eventdata).subscribe((response: any) => {
+      this.eventService.updateEvent(this.eventdata.id, this.eventdata).subscribe((response: any) => {
         this.arrayevents = this.arrayevents.map((o: Event) => {
           if (o.id === response.id) {
             o = response;
@@ -130,7 +135,7 @@ export class ArtistEventCreateComponent implements OnInit {
         this.cancelEdit();
       });
     }
-  
+
     onSubmit() {
         console.log(this.eventdata);
         if (this.isEditMode) {
@@ -140,20 +145,20 @@ export class ArtistEventCreateComponent implements OnInit {
           this.addEvent();
         }
     }
-  
+
     getEventsById(id:number){
       this.eventService.getById(id).subscribe((response: any) => {
         this.dataSource.data = response;
         this.dataSource.paginator=this.paginator;
-  
+
         console.log(response)
       });
     }
-  
+
     ClearForm(){
       this.EventForm.resetForm();
     }
-  
+
     getuserinformation(id:number){
       this.userService.getById(id).subscribe((response: any) => {
         this.dataSource.data = response;
@@ -162,12 +167,12 @@ export class ArtistEventCreateComponent implements OnInit {
         this.lastname=this.userdata.lastname
         return this.name
       });
-  
-  
-  
+
+
+
     }
-  
-  
+
+
   getByIdUser(id:number) {
       this.userService.getById(id).subscribe((response: any) => {
         this.dataSource.data = response;
@@ -177,32 +182,32 @@ export class ArtistEventCreateComponent implements OnInit {
         console.log(this.userdata);
       });
     }
-  
-  
+
+
     getfechacomment(fecha:Date){
-  
-  
-  
-  
+
+
+
+
       this.proDate=fecha
-      
+
       this.proDatevalue = this.datePipe.transform(fecha, 'yyyy-MM-dd')!;
-      
-      
+
+
       return this.proDatevalue
-      
+
       }
-  
-  
+
+
       checkislickisinevent(link:string){
-  
-         
+
+
         if(link=="" || link==null){
-          
+
           return false
         }
         return true
-        
-  
+
+
   }
 }

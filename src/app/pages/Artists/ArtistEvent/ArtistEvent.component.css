@@ -186,3 +186,13 @@
   transform-style: inherit;
   transform: scale(1.2);
 }
+.icons-manageEvents{
+  color: white;
+  align-items: end;
+}
+.edit:hover{
+  color: #E9B824;
+}
+.delete:hover{
+  color: #E9B824;
+}

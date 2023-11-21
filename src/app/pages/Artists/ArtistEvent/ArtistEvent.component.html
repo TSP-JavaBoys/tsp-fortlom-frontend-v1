@@ -18,6 +18,10 @@
       <mat-card class="example-card-event">
         <div class="left-column background1-left-column" *ngFor ="let arr2 of arrayusers">
           <div *ngIf = "arr.artist.id == arr2.id" class="text">
+              <div class="icons-manageEvents">
+                  <mat-icon class="edit" (click)="updateEvent(arr.id)">edit</mat-icon>
+                  <mat-icon class="delete" (click)="deleteEvent(arr.id)">delete</mat-icon>
+              </div>
                     <h1>{{arr.name}}</h1>
           </div>
           <div fxFlex="10" *ngIf = "arr.artist.id == arr2.id">

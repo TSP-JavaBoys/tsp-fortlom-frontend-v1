@@ -38,6 +38,9 @@ import { ForumPageNewComponent } from './pages/forum-page-new/forum-page-new.com
 import {
   ArtistForumCreateComponentComponent
 } from "./pages/Artists/artist-forum-create-component/artist-forum-create-component.component";
+import {
+  ArtistEventEditModeComponent
+} from "./pages/Artists/ArtistEvent/artist-event-edit-mode/artist-event-edit-mode.component";
 
 const routes: Routes = [
 
@@ -47,6 +50,7 @@ const routes: Routes = [
   {path:'HomeArtist/:id/ArtistForum/ForumPage/:forumid',component:ForumPageComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path:'HomeArtist/:id/Event',component:ArtistEventComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path:'HomeArtist/:id/Event/CreateEvent',component:ArtistEventCreateComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
+  {path:'HomeArtist/:id/Event/EditEvent',component:ArtistEventEditModeComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path: 'HomeArtist/:id/posts',component:PostPageComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path: 'HomeArtist/:id/ConfigureArtist',component:ConfigurationArtistComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
   {path: 'HomeArtist/:id/Albums',component:AlbumComponent,canActivate: [ArtistGuard], data: { expectedRol: ['Role_Artist','Role_Upgrade_Artist'] }},
