@@ -34,13 +34,14 @@ justify-content:space-between;
   .center2{
     display: flex;
     justify-content: center;
+
     }
-    p{  
+    p{
         margin-top:10px;
         font-size: 2rem;
         font-style: normal;
         font-weight: 300;
-        line-height: 20px; 
+        line-height: 20px;
         letter-spacing: 0.25px;
       }
       .description{
@@ -57,7 +58,7 @@ justify-content:space-between;
     font-weight: 400;
     line-height: normal;
     color:white;
-    
+
       }
       .descripcard{
         width: 80%;

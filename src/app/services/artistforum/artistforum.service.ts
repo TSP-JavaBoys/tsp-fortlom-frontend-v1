@@ -10,8 +10,8 @@ import {Publication} from "../../models/publication";
 })
 export class ArtistforumService {
 
-  //basePath = 'http://localhost:8080/api/v1/artistforumservice';
-  basePath='https://fortlomv5.azurewebsites.net/api/v1/artistforumservice';
+  basePath = 'http://localhost:8080/api/v1/artistforumservice';
+  //basePath='https://fortlomv5.azurewebsites.net/api/v1/artistforumservice';
 
   httpOptions = {
     headers: new HttpHeaders({
