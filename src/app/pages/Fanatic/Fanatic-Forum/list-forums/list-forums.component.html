@@ -1,0 +1,19 @@
+<mat-card-title>Mi Lista de Foros</mat-card-title>
+
+<div *ngFor="let element of dataSource.data">
+  <mat-card style="margin: 2rem">
+    <form [formGroup]="editForm">
+      <p class="text">Name: {{element.forumname}}</p>
+      <p class="text">Description: {{element.forumdescription}}</p>
+
+      <mat-form-field class="input" appearance="outline">
+        <input matInput class="text" formControlName="forunname" [(ngModel)]="FanaticForumUpdate.forumname">
+      </mat-form-field>
+      <mat-form-field class="input" appearance="outline">
+        <input matInput class="text" formControlName="forumdescription" [(ngModel)]="FanaticForumUpdate.forumdescription">
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" (click)="update(element.id)">Actualizar</button>
+    <button mat-raised-button color="warn" (click)="delete(element.id)">Eliminar</button>
+  </mat-card>
+</div>

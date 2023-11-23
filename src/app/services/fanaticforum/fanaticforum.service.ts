@@ -27,7 +27,6 @@ export class FanaticforumService {
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
     }
-
     return throwError('Something happened with request, please try again later');
   }
   getAll(): Observable<Forum> {
@@ -49,11 +48,17 @@ export class FanaticforumService {
         catchError(this.handleError));
   }
 
+  delete(id: number){
+    return this.http.delete(`${this.basePath}/forums/${id}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
 
-
-
-
-
-
-
+  getAllForumByFanaticId(fanaticId: number): Observable<Forum>{
+    return this.http.get<Forum>(`${this.basePath}/fanatics/${fanaticId}/forums`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
 }
