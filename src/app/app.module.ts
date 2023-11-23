@@ -81,6 +81,7 @@ import {
   ArtistEventEditModeComponent
 } from "./pages/Artists/ArtistEvent/artist-event-edit-mode/artist-event-edit-mode.component";
 import {MatDialogModule} from "@angular/material/dialog";
+import { ListForumsComponent } from './pages/Fanatic/Fanatic-Forum/list-forums/list-forums.component';
 
 @NgModule({
   declarations: [
@@ -144,7 +145,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     ArtistForumCreateComponentComponent,
     MypostsComponent,
     MyListForumsComponent,
-    ArtistEventEditModeComponent
+    ArtistEventEditModeComponent,
+    ListForumsComponent
   ],
   imports: [
     BrowserModule,
