@@ -2,7 +2,14 @@
     background-color: white;
   }
 
-
+.album-image {
+  max-width: 100%; /* Adjust this value based on your design */
+  max-height: 300px; /* Adjust this value based on your design */
+  width: auto;
+  height: auto;
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Remove extra spacing below inline images */
+}
 
 .button-container {
   text-align: center;

@@ -17,7 +17,6 @@
         <input matInput formControlName="name" class="con" [(ngModel)]="objectMusic.name" type="name" required id="musicname" maxlength="20">
         <mat-error *ngIf="createform.controls['name'].dirty && createform.hasError('required') || createform.controls['name'].invalid">Es requerido el nombre</mat-error>
       </mat-form-field>
-    <!--
         <mat-form-field appearance="outline">
           <mat-label>Music category</mat-label>
           <mat-select formControlName="category" [(ngModel)]="objectMusic.category">
@@ -25,7 +24,6 @@
           </mat-select>
           <mat-error *ngIf="createform.controls['category'].dirty && createform.hasError('required') || createform.controls['category'].invalid">Es requerido la categoria</mat-error>
         </mat-form-field>
-     -->
   </mat-card-header>
   <mat-form-field appearance="outline" class="area" >
     <mat-label>Music Url</mat-label>
