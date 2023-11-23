@@ -10,6 +10,6 @@ export interface Music {
 
     album:Album;
 
-    //category:string
+    category:string
 
 }
